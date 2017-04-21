@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/animations.css" rel="stylesheet" />
+    <link href="css/component.css" rel="stylesheet" />
+    <script src="js/modernizr.custom.js"></script>
+
+</head>
+<body style="overflow: hidden;" onresize="positionLogo()">
+    <div style="z-index: 20; width: 100%; height: 100px; position: fixed; top: 0px; opacity: 1;">
+        <img src="img/Header.jpg" style="height: 100px; width: 1024px; top: 0px; z-index: 1; float: left;" />
+        <img src="img/Transexpert-logo.png" id="logo" style="height: 72px; float: left; width: 239px; top: 15px; z-index: 1; left: 650px; position: absolute;" />
+    </div>
+    <div class="container" id="content" style="height: 100%; width: 100%; top: 100px; position: fixed; -webkit-overflow-scrolling: touch; background-color: Black;">
+
+        <div id="pt-main" class="pt-perspective">
+            <div id="pt-page-1" class="pt-page pt-page-1" style="width: 100%; height: 100%; -webkit-overflow-scrolling: touch; background-image: url('img/background.jpg'); background-size: 100% 100%;">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+                <div id="animationHolder" style="width: 717px; height: 489px; background-image: url('img/road.png'); margin: 0 auto;  margin-top:-10px;">
+
+                    
+
+                </div>
+                <div style="width: 717px; margin:0 auto; margin-top:-2px; text-align: center;">
+                    <div style="width:181px; float:left; padding:10px; background-color: rgba(133, 63, 138, 0.6);
+color: black;">Presentation </div>
+                     <div style="width:177px; float:left; padding:10px; background-color: rgba(133, 63, 138, 0.88);
+color: black;">Relevant History</div>
+                     <div style="width:181px; float:left; padding:10px; background-color: rgba(133, 63, 138, 0.6);
+color: black;">Examination</div>
+                     <div style="width:176px; float:left; padding:10px; background-color: rgba(133, 63, 138, 0.88);
+color: black;">Laboratory findings</div>
+                </div>
+                <input id="range" type="range" min="0" max="100" value="0" />
+
+            </div>
+            <div id="pt-page-2" class="pt-page pt-page-2">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+                <div style="width: 90%; height: 73%; border-radius: 5px">
+                    <div id="content1" data-value="1" style="position: absolute;" class="content">
+                        <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                            <strong><u>Case study:</u></strong>
+                        </p>
+                        <ul style="margin-left: 60px;">
+                            <li>Hypertension and hyperlipidemia were controlled on medications</li>
+                            <li>Patient underwent living donor (brother) renal transplant</li>
+                            <li>Graft function was immediate</li>
+                            <li>Initial immunosuppression after transplant consisted of
+                            <ul>
+                                <li>Cyclosporine (CsA),10mg/kg/day to achieve trough blood levels of 250-350 ng/ml</li>
+                                <li>Prednisone 0.5 mg/kg/day tapered to 10 mg/day</li>
+                                <li>Basiliximab induction</li>
+                            </ul>
+                            </li>
+                            <li>Serum creatinine was stable between 1.9 mg/dL to 2.0 mg/dL</li>
+                        </ul>
+                    </div>
+                    <div id="content2" data-value="2" style="display: none; position: relative;" class="content">
+                        <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                            <strong><u>Decision Point:</u></strong>
+                        </p>
+                        <p style="margin-left: 30px;">
+                            Would you consider KT in this patient?
+                        </p>
+                        <div id="radio1" style="padding: 10px 25px 10px 10px; margin-left: 60px;">
+                            <input name="ratio1" value="1" type="radio" />
+                            Yes
+                        </div>
+                        <div id="radio1" style="padding: 10px 25px 10px 10px; margin-left: 60px;">
+                            <input name="ratio1" value="2" type="radio" />
+                            No
+                        </div>
+                    </div>
+                    <br />
+                    <div style="position: absolute; top: 75%; left: 50%; background: transparent;">
+                        <button type="button" onclick="changecontent(this,'next');" class="btn btn-primary cusBtn" style="background-color: #8dc63f;">
+                            Next</button>
+                    </div>
+                    <div style="position: absolute; top: 75%; left: 45%; background: transparent;">
+                        <button type="button" onclick="changecontent(this,'back');" class="btn btn-primary cusBtn" style="background-color: #8dc63f;">
+                            Back</button>
+                    </div>
+                </div>
+            </div>
+            <div id="pt-page-3" class="pt-page pt-page-3">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+                <div id="p3content1" style="position: absolute;">
+                    <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                        <strong><u>Case study:</u></strong>
+                    </p>
+                    <ul style="margin-left: 60px;">
+                        <li>One year after the transplant, the patient had deterioration in his renal functions
+                            (serum creatinine raised from 2.0 mg/dL to 2.7 mg/dL), increase in blood pressure
+                            and hyperlipidemia </li>
+                    </ul>
+                </div>
+                <div id="p3content2" style="display: none; position: relative;">
+                    <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                        <strong><u>Decision Point:</u></strong>
+                    </p>
+                    <p style="margin-left: 30px;">
+                        What could be the cause of patient’s deteriorating renal functions?
+                    </p>
+                    <div style="margin-left: 60px;">
+                        <div id="radio1" style="padding: 10px 25px 10px 10px;">
+                            <input name="ratio1" value="1" type="radio" />
+                            CNI therapy is associated with nephrotoxicity [CAN/IFTA]
+                        </div>
+                        <div id="radio1" style="padding: 10px 25px 10px 10px;">
+                            <input name="ratio1" value="2" type="radio" />
+                            High Cyclosporine exposure is associated with CAN
+                        </div>
+                        <div id="radio1" style="padding: 10px 25px 10px 10px;">
+                            <input name="ratio1" value="3" type="radio" />
+                            C
+                        </div>
+                        <div id="radio1" style="padding: 10px 25px 10px 10px;">
+                            <input name="ratio1" value="4" type="radio" />
+                            D
+                        </div>
+                        <div id="radio1" style="padding: 10px 25px 10px 10px;">
+                            <input name="ratio1" value="5" type="radio" />
+                            E
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div style="position: absolute; top: 75%; left: 50%;">
+                    <button type="button" onclick="changecontent('3','next');" class="btn btn-primary cusBtn" style="background-color: #8dc63f;">
+                        Next</button>
+                </div>
+                <div style="position: absolute; top: 75%; left: 45%;">
+                    <button type="button" onclick="changecontent('3','back');" class="btn btn-primary cusBtn" style="background-color: #8dc63f;">
+                        Back</button>
+                </div>
+            </div>
+            <div id="pt-page-4" class="pt-page pt-page-4">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+                <div>
+                    <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                        <strong><u>Case study:</u></strong>
+                    </p>
+                    <ul style="margin-left: 60px;">
+                        <li>2 years post transplantation patient visited a dermatologist with complaints of
+                            rough, reddish, scaly, red bumps on the sunexposed areas of his body. Biopsy revealed
+                            actinic keratosis</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pt-page-5" class="pt-page pt-page-5">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+            </div>
+            <div id="pt-page-6" class="pt-page pt-page-6">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+                <div>
+                    <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                        <strong><u>Case study:</u></strong>
+                    </p>
+                    <ul style="margin-left: 60px;">
+                        <li>Short term</li>
+                        <li>Long term</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="container">
+        <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color: #d7e9bd;">
+
+            <div class="container" id="playback" style="width: 100%; height: 32px;">
+                <ul class="ul_menu">
+                    <li data-animation="58" data-content="#pt-page-1" class="li_menu cusBtn active">History and presentation</li>
+                    <li data-animation="58" data-content="#pt-page-2" class="li_menu cusBtn">Management</li>
+                    <li data-animation="58" data-content="#pt-page-3" class="li_menu cusBtn">Follow-up</li>
+                    <li data-animation="58" data-content="#pt-page-4" class="li_menu cusBtn">Follow-up continued</li>
+                    <li data-animation="58" data-content="#pt-page-5" class="li_menu cusBtn">The certican patient</li>
+                    <li data-animation="58" data-content="#pt-page-6" class="li_menu cusBtn">Safety and tolerability of everolimus</li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div style="display:none;">
+        <div id="ImgCont1">
+             <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                                <strong><u>Presentation:</u></strong>
+                            </p>
+                            <ul style="margin-left: 60px;">
+                                <li>A 54 year old male is referred for evaluation of increased serum creatinine
+                                </li>
+                            </ul>
+
+                            <p style="color: #68126e; margin-left: 30px; margin-top: 15px; font-size: 21px;">
+                                <strong><u>History:</u></strong>
+                            </p>
+                            <ul style="margin-left: 60px;">
+                                <li>Hypertension, diagnosed 10 years ago</li>
+                                <li>Hyperlipidemia; diagnosed 5 years ago</li>
+                                <li>Crohn's disease, diagnosed in the 1990‘s</li>
+                                <li>Developed recurrent stone disease in the early 2000's </li>
+                                <li>Serum creatinine was 1.9 mg% in 1996 and 2.4 mg% in 2003</li>
+                                <li>Acute renal failure secondary to obstructive stone disease with a serum creatinine of 12.4 mg% in 2005</li>
+                                <li>Renal function moderately improved after obstruction correction and IgA nephropathy was diagnosed; PRA was 50%</li>
+                                <li>Hemodialysis from 2007, complicated by several episodes of sepsis
+
+                                </li>
+                            </ul>
+
+        </div>
+
+         <div id="ImgCont2">
+                            <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                                <strong><u>Family/ Occupational/ Social History:</u></strong>
+                            </p>
+                            <ul style="margin-left: 60px;">
+                                <li>Father with hypertension; died age 70 years due to myocardial infarction</li>
+                                <li>Mother with history of type 2 diabetes for 15 years; 72 years</li>
+                                <li>Married, with 2 children</li>
+                                <li>Never smoked or consumed alcohol</li>
+                                <li>Retired traffic officer</li>
+
+                            </ul>
+                            <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                                <strong><u>Current Medications:</u></strong>
+                            </p>
+                            <ul style="margin-left: 60px;">
+                                <li>Lisinopril 20 mg QD</li>
+                                <li>Fluvastatin 20 mg QD </li>
+                            </ul>
+
+                       
+
+        </div>
+
+         <div id="ImgCont3">
+             <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                                <strong><u>On examination: </u></strong>
+                            </p>
+                            <ul style="margin-left: 60px;">
+
+                                <li>Overweight </li>
+                                <li>Height: 5’ 7"</li>
+                                <li>Weight: 185 lbs</li>
+                                <li>BMI: 29.0 </li>
+                                <li>Waist circumference: 38"</li>
+                                <li>Blood pressure: 130/80 mm Hg</li>
+                                <li>Cardiac exam: normal </li>
+                                <li>Peripheral pulses: normal</li>
+                                <li>No organomegaly</li>
+
+
+                            </ul>
+        </div>
+
+
+         <div id="ImgCont4">
+             <div style="width: 50%; float: left;">
+                     <p style="color: #68126e; margin-left: 30px; margin-top: 30px; font-size: 21px;">
+                                <strong><u>Laboratory findings
+ : </u></strong>
+                            </p>
+                            <ul style="">
+                                <li>FSG: 100 mg/dL [75-100 mg/dL]</li>
+                                <li>Creatinine: 2.9 mg/dL</li>
+                                <li>Blood Urea Nitrogen: 25 mg/dL</li>
+                                <li>eGFR: 23 mL/min/1.73 m2</li>
+                                <li>ALT: 62 U/L</li>
+                                <li>Uric acid: 8.8 mg/dL</li>
+                                <li>HbA1C: 5.5%</li>
+                                <li>UA: 1+protein</li>
+                                <li>TSH: normal</li>
+                                <li>Resting ECG: left axis deviation, otherwise normal</li>
+
+
+                            </ul>
+
+
+
+                        </div>
+
+                        <div style="width: 50%; float: left;">
+
+                            <ul style="margin-left: 60px; margin-top:65px;">
+
+                                <li>Lipid panel
+                                </li>
+
+                                <ul>
+                                    <li>TC: 191 mg/dL [<200 mg/dL]</li>
+                                    <li>TG: 280 mg/dL [<	150 mg/dL]</li>
+                                    <li>HDL-C: 36 mg/dL [>40 mg/dL]</li>
+                                    <li>
+                                    LDL-C: 99 mg/dL [<130 mg/dL]
+
+                                </ul>
+                                </li>
+                                <li>PRA: <10
+                                </li>
+                            </ul>
+                        </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="ImgContent">
+
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default"  data-dismiss="modal" style="margin-top: 0px;">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.dlmenu.js"></script>
+
+    <script src="js/pagetransitions.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            positionLogo();
+            $(".li_menu").click(function (event) {
+                $(".li_menu").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+        function positionLogo() {
+            document.getElementById("logo").style.left = (window.innerWidth) - 239 + "px";
+        }
+        function changecontent(ele, step) {
+            var currentID = 1;
+            var nextID = 1;
+            var elements = $(ele).parent().parent().find(".content");
+            for (var i = 0; i < elements.length; i++) {
+                if ($(elements[i]).css('display') != 'none')
+                    currentID = $(elements[i]).data("value");
+            }
+
+            if (step == 'next') {
+                if (currentID < elements.length)
+                    nextID = parseInt(currentID) + 1;
+                else
+                    return;
+            }
+            else {
+                if (currentID > 1)
+                    nextID = parseInt(currentID) - 1;
+                else
+                    return;
+            }
+
+            $(ele).parent().parent().find('#content' + currentID).fadeOut("slow", function () {
+                $(ele).parent().parent().find('#content' + nextID).css('display', 'block');
+            });
+
+        }
+    </script>
+    <script src="js/raphael-min.js"></script>
+    <script src="js/raphael-guides.js"></script>
+    <script>
+        var img1, img2, img3, img4;
+        var imgArray = new Array();
+        var pathArray = new Array();
+        var path1, path2, path3, path4, path;
+        var line;
+     
+        $(function () {
+            LoadXml();
+            //img1 = p.image("img/logo.png", -10, 0, 56, 58);
+            //$(img1.node).attr("id", "img");
+            //$(img1.node).attr("class", "imgDisabled");
+            //img1.attr({ guide: path1, along: 0.2 });
+            //img1.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont1").html()); });
+
+
+            ////img1.mouseover(function (e) {
+            ////    img1.animate({ scale: 1.0 }, 1000, "ease-out");
+            ////});
+            ////img1.mouseout(function (e) {
+            ////    img1.animate({ scale: img1.lastScale }, 1000, "ease-out");
+            ////});
+
+            //img2 = p.image("img/logo.png", 0, 0, 56, 58);
+            //img2.attr({ guide: path2, along: 0.2 });
+            //img2.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont2").html()); });
+
+            //img3 = p.image("img/logo.png", 0, 0, 56, 58);
+            //img3.attr({ guide: path3, along: 0.2 });
+            //img3.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont3").html()); });
+
+            //img4 = p.image("img/logo.png", 0, 0, 56, 58);
+            //img4.attr({ guide: path4, along: 0.2 });
+            //img4.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont4").html()); });
+
+            //var circ1 = p.circle(0, 0, 10).attr(black);
+
+            //var circ2 = p.circle(0, 0, 10).attr(black);
+            //var circ3 = p.circle(0, 0, 10).attr(black);
+            //var circ4 = p.circle(0, 0, 10).attr(black);
+
+            //var circ2 = p.circle(0, 0, 10).attr(black);
+
+            //$(document).on("click", function () {
+            //    // animate along a path
+
+
+            //    //circ2.attr({ guide: path3, along: 1 })
+            //    //  .animate({ along: 0 }, 3000, "ease-out");
+            //});
+
+
+
+        });
+
+        window.onload = function () {
+            document.getElementById("range").addEventListener("change", function (e) {
+                //document.querySelector(".range").textContent = e.currentTarget.value;
+//                console.log(e.currentTarget.value);
+                var time = 1000;
+                var length = (parseInt(e.currentTarget.value)) / 100;
+
+                
+                for (var i = 0; i < imgArray.length; i++) {
+                    imgArray[i].animate({ along: length }, time, "ease-out");
+                    line.animate({ along: length }, time, "ease-out");
+                }
+                
+            });
+        }
+
+        function SlideSlider(value) {
+            var time = 1000;
+            var length = value / 100;
+            for (var i = 0; i < imgArray.length; i++) {
+                imgArray[i].animate({ along: length }, time, "ease-out");
+                line.animate({ along: length }, time, "ease-out");
+            }
+        }
+
+        $("#animationHolder").swipe({
+            //Generic swipe handler for all directions
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == "up")
+                    $("#range").val( parseInt($("#range").val()) + 10);
+                else if (direction == "down")
+                    $("#range").val(parseInt($("#range").val()) - 10);
+
+                SlideSlider($("#range").val());
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold: 0
+        });
+
+
+        function LoadXml() {
+            $.ajax({
+                type: "GET",
+                url: "data.xml",
+                dataType: "xml",
+                success: function (xml) {
+                    loadImageData(xml);
+                }
+            });
+        }
+
+        function loadImageData(xml) {
+            var holder = document.getElementById("animationHolder");
+            var p = new Raphael("animationHolder", "100%", "100%");
+
+            // give raphael guide and along custom attributes
+            p.addGuides();
+
+            var white = { stroke: "none" };
+            var black = { stroke: "black" };
+            var path;
+
+            //var path1 = p.path("M 100 100 Q 200 500 300 100").attr(white);
+
+            /*var path2 = p.path("M 300 100 \
+                           R 350 150 \
+                           400 50 \
+                           450 100 \
+                           500 40 \
+                           550 100").attr(white);*/
+
+            pathArray[4] = p.path("M 539 486 \
+                           Q 430 330 417 0\
+                           ").attr(black);
+
+            pathArray[3] = p.path("M 357 487 \
+                           Q 375 320 375 0\
+                           ").attr(black);
+
+            pathArray[2] = p.path("M 180 487 \
+                           Q 325 305 337 0\
+                           ").attr(black);
+            pathArray[1] = p.path("M 0 488 \
+                           Q 260 325 300 0\
+                           ").attr(black);
+            pathArray[0] = p.path("M 357 487 \
+                           L 375 0\
+                           ").attr(black);
+
+            line = p.rect(-290, 0, 600, 5);
+            line.attr({ fill: "black" });
+            line.attr({ guide: pathArray[0], along: 0 });
+
+
+            var items = $(xml).find('element');
+            for (var i = 0; i < items.length; i++) {
+                var element = items[i];
+                imgArray[i] = p.image(element.getAttribute("source"), parseInt(element.getAttribute("x")), parseInt(element.getAttribute("y")), 56, 58);
+                $(imgArray[i].node).attr("id", "img"+i);
+                $(imgArray[i].node).attr("class", "RoadImg");
+                var Imgpath = element.getAttribute("path");
+                imgArray[i].attr({ guide: pathArray[Imgpath], along: parseInt(element.getAttribute("along")) });
+                imgArray[i].click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#"+element.getAttribute("dataID")).html()); });
+
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+

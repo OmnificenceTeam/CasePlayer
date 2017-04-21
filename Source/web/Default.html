@@ -1,0 +1,1854 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!--<link rel="stylesheet" href="dasky/css/dasky.min.css" />-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-switch.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/animations.css" rel="stylesheet" />
+    <link href="css/component.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/touch.timeline.light.css" type="text/css" />
+    <style>
+        .justifytable td {
+            text-align: justify;
+        }
+
+        .bordertable td {
+            border-style: solid;
+            border-color: white;
+            padding: 10px;
+        }
+
+        .tdwidth td {
+            width: 110px;
+            text-align: center;
+        }
+
+        .botlogo {
+            background-repeat: no-repeat;
+        }
+        .yesno li {
+            line-height: 30px;
+        }
+    </style>
+    <script src="js/jquery v1.11.js"></script>
+
+    <script type="text/javascript">
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+
+    </script>
+
+    <script src="js/modernizr.custom.js"></script>
+
+    <script src="js/custom.js"></script>
+
+    <script src="js/service/Service.js"></script>
+
+    <script src="js/service/ServiceData.js"></script>
+
+    <script src="js/mod.js"></script>
+    <script src="js/omnificence.animation.guides.js"></script>
+    <script src="js/module1.data.js"></script>
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'Droid Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Droid Sans'), local('DroidSans'), url(../fonts/Droid Sans.woff) format('woff');
+        }
+
+        #dasky {
+            font-family: 'Droid Sans', sans-serif;
+        }
+        .refp {
+            text-align: center;
+            font-size:10px;
+        }
+    </style>
+</head>
+<body style="overflow: hidden;" onresize="positionLogo()" onload="">
+
+    <!--<canvas id="can" width="754" height="590" style=" width: 900px; height: 600px; z-index: 2;" >
+          </canvas>-->
+
+     <div id="my" style="position:absolute; margin:auto; width:900px; z-index:0; ">  
+             <canvas id="can" width="780" height="580" style="margin:0 auto; left:125px; top:164px; position:fixed;" >
+          </canvas>
+            </div>
+
+    <div style="z-index: 20; width: 100%; height: 100px; position: fixed; top: 0px; opacity: 1;">
+        <img src="img/Header.jpg" style="height: 100px; width: 100%; top: 0px; z-index: 1; float: left;" />
+        <!--<div class="botlogo" style="width: 257px; height: 80px; background-image: url(img/Novartis.png); position: absolute; margin-top: 20px; left: 10px;"></div>-->
+        <img src="img/Transexpert-logo.png" id="logo" style="height: 72px; float: left; width: 239px; top: 15px; z-index: 1; left: 650px; position: absolute;" />
+    </div>
+    <div class="container" id="content" style="height: 100%; width: 100%; top: 100px; position: fixed; background-image: url('img/background.jpg'); background-size: 100% 100%;">
+
+        
+
+        <div style="width: 717px; margin: 0 auto;">
+            <div id="timeSlider" style="width: 717px; position: fixed; z-index: 111; display: none;">
+                <div class="timeline-wrap">
+                    <div class="timeline-event" data-value="22" data-margin="-32px">
+                        <div class="timeline-title arrow_box" onclick="clearAll()">Jan 2013</div>
+
+                    </div>
+                    <div class="timeline-event" data-value="37" data-margin="-12px">
+                        <div class="timeline-title" onclick="clearAll()">May 2013</div>
+
+                    </div>
+                    <div class="timeline-event" data-value="48" data-margin="0px">
+                        <div class="timeline-title" onclick="clearAll()">Jun 2013</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="" class="">
+            <div style="width: 100%; height: 100%;">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+                <div id="TitleContent" style="padding: 20px; margin-top: 100px; display: none;">
+                    <h2>Selecting Patients & Addressing Safety and Efficacy in the de novo context in KT
+                    </h2>
+                    <p style="font-size: 16px;">
+                        Professor Samir Mallat
+                        <br />
+                        Associate Professor of Clinical Medicine<br />
+                        Director, End-Stage Renal Disease Program<br />
+                        American University of Beirut Medical Center
+                        <br />
+
+                    </p>
+
+                    <button type="button" style="position: fixed; right: 0; bottom: 0; margin-right: 100px; margin-bottom: 100px;"
+                        onclick="$('#TitleContent').hide(); $('#StartContent').show();" class="btn btn-custom">
+                        Continue</button>
+                </div>
+
+                <div id="StartContent" style="text-align: center; margin-top: 160px; display: none;">
+                    <button type="button" class="casebtn" onclick="$('#StartContent').hide(); $('#Objective').show();  ">
+                        Case study 1
+                    </button>
+                    <button type="button" class="casebtn" onclick="location.href='Default_c2.html' ">
+                        Case study 2
+                    </button>
+                </div>
+
+                <div id="Objective" style="padding: 20px; display: none; margin-top: 50px;">
+                    <h2>Objectives
+                    </h2>
+                    <ul style="font-size: 19px;">
+                        <li>Examine the evidence of calcineurin inhibitor (CNI) toxicity
+                        </li>
+                        <li>Understand the role of everolimus in KT
+                        </li>
+                        <li>Define the characteristics of a patient suitable for treatment with everolimus
+                        </li>
+                    </ul>
+
+                    <button type="button" style="position: fixed; right: 0; bottom: 0; margin-right: 100px; margin-bottom: 100px;"
+                        onclick="$('#Objective').hide(); $('#MainContent').show(); $('#timeSlider').show(); startTimeline();" class="btn btn-custom">
+                        Continue</button>
+                </div>
+
+                <div id="MainContent" style="display: none;">
+                    <img src="img/home.png" style="width: 44px; position: fixed; right: 0; margin-right: 25px; cursor: pointer;" onclick="location.href='Default.html?show=1'" />
+                    <img id="pen" src="img/pencile.png" style="width: 44px; position: fixed; right: 0; margin-right: 25px; cursor: pointer; margin-top:50px; z-index:9999" onclick="drawCan()" />
+         
+                    <!--<a href="#tools_sketch" data-tool="marker" style="width: 44px; position: fixed; right: 0; margin-right: 25px; cursor: pointer; margin-top:50px;" ><img src="img/back-button.png" /></a>-->
+
+
+
+                    <!--  <div style="position:absolute;background-image: url(img/legendbuttont.png); width:323px; height:152px; margin-top:50px; margin-left:5px;">           
+                            <div style="max-width:300px;">
+                            <img src="img/legend.png" style="height:50px; width:40px; margin-left: 25px; margin-top:20px;z-index:1;" />
+                                <p style="font-size:12px; margin-left:80px; margin-top:-45px;z-index:1;">Enabled icon you can view the presentation</p>
+                            <img src="img/legend_disable.png" style="height:50px; width:40px; margin-left: 25px; margin-top:15px;z-index:1;" />
+                                <p style="font-size:12px; margin-left:80px; margin-top:-45px;z-index:1;">Disabled icon only speaker can able to enable</p>
+                           </div>
+                       </div> -->
+                   
+                    <div id="animationHolder" style="width: 717px; height: 489px;  margin: 0 auto; margin-top: 26px;">
+                    <canvas id="anican" width="717" height="489" style="width: 717px; height: 489px; background-image: url('img/road.png'); margin: 0 auto; "></canvas>
+
+                        
+                    </div>
+
+                     
+
+                     
+
+                    
+                    <div style="width: 717px; margin: 0 auto; margin-top: -2px; text-align: center;">
+                        <div style="width: 142px; background-color: #8cc63f; padding-top: 20px;" class="roadMnu">
+                            Presentation
+                        </div>
+                        <div style="width: 140px; background-color: #d1e5b0; padding-top: 20px;" class="roadMnu">
+                            Relevant History
+                        </div>
+                        <div style="width: 141px; background-color: #8cc63f; padding-top: 20px;" class="roadMnu">
+                            Examination
+                        </div>
+                        <div style="width: 142px; background-color: #d1e5b0;" class="roadMnu">
+                            Laboratory findings
+                        </div>
+                        <div style="width: 142px; background-color: #8cc63f; padding-top: 20px;" class="roadMnu">
+                            Management
+                        </div>
+                    </div>
+
+                    <input id="range" type="range" min="20" max="55" value="20" style="display: none;" />
+                    <div id="ShowDiv" style="width: 100%; height: 100%; z-index: 999; background-color: rgba(85, 85, 85, 0.76); position: absolute; top: 0; display: none;">
+
+                        <div style="margin: 0 auto; overflow-x: hidden; overflow-y: auto; background-color: rgba(241, 241, 241, 1); box-shadow: 1px 2px 7px -1px black; width: 85%; margin-top: 65px; height: 75%;">
+                             
+                             
+
+                            <div style="text-align: right;">
+                                <span class="glyphicon glyphicon-remove" style="margin: 10px; cursor: pointer;" onclick="onclickClose()"></span>
+                            </div>
+                            <div id="ImgCont1" class="ImgCCC" style="display: none;">
+                                <p class="headingtxt">
+                                    <strong><u>Presentation:</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>A 54 year old male is referred for evaluation of increased serum creatinine </li>
+                                </ul>
+                            </div>
+                            <div id="ImgCont2" class="ImgCCC pt-perspective" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray btnprev" style="">
+                                    <span style="margin-top: 235px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="pt-page pt-page-current" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>History:</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <li>Hypertension, diagnosed 10 years ago</li>
+                                        <li>Hyperlipidemia, diagnosed 5 years ago</li>
+                                        <li>Crohn's disease, diagnosed in the 1990's</li>
+                                        <li>Developed recurrent stone disease in the early 2000's </li>
+                                        <li>Serum creatinine was 1.9 mg% in 1996 and 2.4 mg% in 2003</li>
+                                        <li>A kidney biopsy revealed Ig A Nephropathy </li>
+                                        <li>Acute renal failure secondary to obstructive stone disease with a serum creatinine
+                                            of 12.4 mg% in 2005</li>
+                                        <li>Renal function moderately improved after obstruction correction</li>
+                                        <li>Hemodialysis from 2007, complicated by several episodes of sepsis </li>
+                                    </ul>
+
+                                </div>
+                                <div id="Content2" class="pt-page" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Other relevant history:</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <li><strong><u>Family/ Occupational/ Social History:</u></strong>
+
+                                            <ul>
+                                                <li>Father with hypertension; died age 70 years due to myocardial infarction</li>
+                                                <li>Mother with history of type 2 diabetes for 15 years; 72 years</li>
+                                                <li>Married, with 2 children</li>
+                                                <li>Never smoked or consumed alcohol</li>
+                                                <li>Construction site supervisor</li>
+                                            </ul>
+                                        </li>
+                                        </ul>
+                                    <ul style="margin-left: 60px;">
+                                        <li>
+
+                                            <strong><u>Current Medications:</u></strong>
+                                            <ul>
+                                                <li>Lisinopril 20 mg QD</li>
+                                                <li>Fluvastatin 20 mg QD </li>
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                                <div onclick="onclicknext(this);" id="btnnext" class="btnnext" style="">
+                                    <span style="" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                            <div id="ImgCont3" class="ImgCCC" style="display: none;">
+                                <p class="headingtxt">
+                                    <strong><u>Examination: </u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Overweight </li>
+                                    <li>Height: 5’ 7"</li>
+                                    <li>Weight: 80 kg</li>
+                                    <li>BMI: 28.0 </li>
+                                    <li>Waist circumference: 38"</li>
+                                    <li>Blood pressure: 130/80 mm Hg</li>
+                                    <li>Cardiac exam: normal </li>
+                                    <li>Peripheral pulses: normal</li>
+                                    <li>No organomegaly</li>
+                                </ul>
+                            </div>
+                            <div id="ImgCont4" class="ImgCCC" style="display: none;">
+                                <div style="width: 100%;">
+                                    <p class="headingtxt">
+                                        <strong><u>Laboratory findings: </u></strong>
+                                    </p>
+                                    <div style="width: 50%; position: relative; max-width: 50%;">
+
+                                        <ul style="margin-left: 60px;">
+                                            <li>FSG: 100 mg/dL [75-100 mg/dL]</li>
+                                            <li>Creatinine: 7.9 mg/dL</li>
+                                            <li>Blood Urea Nitrogen: 75 mg/dL</li>
+                                            <li>eGFR: 12 mL/min/1.73 m<sup>2</sup></li>
+                                            <li>ALT: 62 U/L</li>
+                                            <li>Uric acid: 8.8 mg/dL</li>
+                                            <li>HbA1C: 5.5%</li>
+                                            <li>UA: 1+protein</li>
+                                            <li>TSH: normal</li>
+                                            <li>Resting ECG: left axis deviation, otherwise normal</li>
+                                        </ul>
+                                    </div>
+                                    <div style="width: 49%; float: right; position: relative; margin-top: -254px;">
+                                        <ul>
+                                            <li style="font-size: 16px;"><strong>Lipid panel</strong>
+                                                <ul style="font-size: 16px; line-height: 28px;">
+                                                    <li>TC: 191 mg/dL</li>
+                                                    <li>TG: 280 mg/dL</li>
+                                                    <li>HDL-C: 36 mg/dL</li>
+                                                    <li>LDL-C: 99 mg/dL</li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div style=" margin:0px auto; text-align:justify;width:760px;" class="refp">
+                                    <p style="margin-top:100px;">FSG, fasting serum glucose; BUN, blood urea nitrogen; eGFR, estimated glomerular filtration rate; ALT, Alanine transaminase; HbA1C, glycosylated hemoglobin; UA, urinalysis; TSH, thyroid stimulating hormone; ECG, electrocardiography; TC, total cholesterol; TG, triglycerides; HDL-C, high density lipoprotein cholesterol; LDL-C, low density lipoprotein cholesterol; PRA, panel reactive antibody  </p>
+                                </div>
+                            </div>
+                            <div id="ImgCont5" class="ImgCCC pt-perspective" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray btnprev" style="">
+                                    <span style="margin-top: 235px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="pt-page pt-page-current" data-value="1" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Patient selection for KT:</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <li>Kidney transplantation is the preferred treatment option for patients who have or
+                                            are developing end-stage renal disease and who are, or will be undergoing, chronic
+                                            dialysis therapy</li>
+
+                                        <li style="margin-top: 20px;">To qualify for KT a patient should have:
+                                            <ul>
+                                                <li>Progressive, irreversible renal disease</li>
+                                                <li>No active malignancy or infection </li>
+                                                <li>Absence of systemic disease which would severely limit rehabilitation </li>
+                                                <li>Life expectancy greater than 5 years with a successful transplant</li>
+                                                <li>Effective family or social support systems </li>
+                                                <li>Willingness to comply with treatment and follow-up requirements </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div class="refp">
+                                    <p style="margin-top: 200px; ">Clinical  Guidelines for Kidney Transplantation. http://www.bcrenalagency.ca/</p>
+                                        </div>
+                                </div>
+                                <div id="Content2" class="pt-page" data-value="2" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Post-transplant management:</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <li>Patient underwent living donor (brother) renal transplant</li>
+                                        <li>Graft function was immediate</li>
+                                        <li>Initial immunosuppression after transplant consisted of
+                                            <ul>
+                                                <li>Cyclosporine (CsA), initiated at 8 mg/kg/day to achieve trough blood levels of 250-350
+                                                    ng/ml</li>
+                                                <li>Prednisone 0.5 mg/kg/day tapered to 10 mg/d</li>
+                                                <li>Mycophenolate mofetil 500 mg twice daily </li>
+                                                <li>Basiliximab induction</li>
+                                            </ul>
+                                        </li>
+                                        <li>Serum creatinine was stable at 1.2 mg/dL on discharge</li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div onclick="onclicknext(this);" id="btnnext" class="btnnext" style="">
+
+                                    <span style="" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                            <div id="ImgCont6" class="ImgCCC" style="display: none;">
+                                <p class="headingtxt">
+                                    <strong><u>Worsening renal function: </u></strong>
+                                </p>
+                                <p style="margin-left: 40px;">
+                                    Four months after the transplant, the patient had
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Deterioration in his renal functions</li>
+                                    <li>Increase in blood pressure</li>
+                                    <li>Hyperlipidemia</li>
+                                </ul>
+                            </div>
+                            <div id="ImgCont7" class="ImgCCC" style="display: none;">
+                                <p class="headingtxt">
+                                    <strong><u>Laboratory findings: </u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Serum creatinine increased to 2.7 mg/dL</li>
+                                    <li>Blood pressure 140/88 mm Hg</li>
+                                    <li>Lipid panel:
+                                        <ul>
+                                            <li>TC: 235 mg/dL</li>
+                                            <li>TG: 360 mg/dL</li>
+                                            <li>HDL-C: 40 mg/dL</li>
+                                            <li>LDL-C: 123 mg/dL</li>
+                                        </ul>
+                                    </li>
+                                    <li>Renal biopsy revealed no cellular rejection but mild tubular atrophy and patchy
+                                        mild interstitial fibrosis</li>
+                                </ul>
+                            </div>
+                            <div id="ImgCont8" class="ImgCCC pt-perspective" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray btnprev" style="">
+                                    <span style="margin-top: 235px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="pt-page pt-page-current" data-value="1" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u></u></strong>
+                                    </p>
+                                    <p style="margin-left: 40px; font-size: 18px;">
+                                        What could be the most significant factor contributing or causing this renal pathology?
+                                    </p>
+                                    <div style="padding-top: 10px; padding-left: 20px; width: 525px; float: left;">
+
+                                        <input type="hidden" id="Answer" value="CNI nephrotoxicity" />
+                                        <input type="hidden" id="QuestionID" value="1" />
+
+                                        <div style="margin-left: 60px;">
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="Acute graft rejection" id="radio1"
+                                                    class="css-checkbox" />
+                                                <label for="radio1" class="css-label radGroup1">
+                                                    A.  Acute graft rejection</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="Delayed graft functioning (DGF)" id="radio2"
+                                                    class="css-checkbox" />
+                                                <label for="radio2" class="css-label radGroup1">
+                                                    B.  Delayed graft functioning (DGF)</label><br />
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="Infection" id="radio3" class="css-checkbox" />
+                                                <label for="radio3" class="css-label radGroup1">
+                                                    C.  Infection</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="CNI nephrotoxicity" id="radio4" class="css-checkbox" />
+                                                <label for="radio4" class="css-label radGroup1">
+                                                    D.  CNI nephrotoxicity</label>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div style="width: 100%; text-align: right;">
+                                        <input type="hidden" value="1" class="QID" />
+
+                                        <input id="imgcont8but1" onclick="onclickAnswer(this);" class="btn btn-custom" type="button" value="Submit" style="width: 100px; margin-right: 100px;" />
+
+                                    </div>
+                                    <div id="AnswerDisp">
+                                    </div>
+                                </div>
+
+                                <div id="Content2" class="pt-page" data-value="2" style="text-align: center;">
+
+                                    <p class="headingtxt">
+                                        <strong><u>CNI therapy and nephrotoxicity:</u></strong>
+                                    </p>
+                                    <img src="img/CNI-therapy-and-nephrotoxicity.png" style="margin-top: 30px;" />
+                                    <div class="refp" style="vertical-align:bottom;">
+                                    <p style=" margin-top: 100px;">Campistol JM, et al. Transplantation. 2011 Aug 15;92(3 Suppl):S3 26</p>
+                               </div>
+                                         </div>
+                                <div id="Content3" class="pt-page" data-value="3" style="text-align: center;">
+                                    <p class="headingtxt">
+                                        <strong><u>CNI therapy causes acute and chronic nephrotoxicity:</u></strong>
+                                    </p>
+                                    <img src="img/image1.png" style="margin-top: 0px;" />
+                                    <div class="refp">
+                                    <p style=" margin-top: 100px;">
+                                        Naesens M, et al. Clin J Am Soc Nephrol 4: 481–508, 2009
+                                    </p>
+                                        </div>
+                                </div>
+                                <div id="Content4" class="pt-page" data-value="4" style="text-align: center;">
+                                    <p class="headingtxt">
+                                        <strong><u>High cyclosporine exposure is associated with CAN:</u></strong>
+                                    </p>
+                                    <img src="img/CsA-exposure.png" style="margin-top: 30px;" />
+                                    <div class="refp">
+                                    <p style="margin-top: 60px;">
+                                        CAN, chronic allograft nephropathy; CsA, cyclosporine.<br />
+                                        Nankivell BJ, et al. Transplantation. 2004;78(4):557–65
+                                    </p>
+                                        </div>
+                                </div>
+                                <div id="Content5" class="pt-page" data-value="5" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u></u></strong>
+                                    </p>
+
+                                    <p style="margin-left: 40px; font-size: 18px;">
+                                        Which is the preferred therapeutic option to prevent calcineurin inhibitor nephrotoxicity?
+                                    </p>
+
+                                    <div style="padding-top: 10px; padding-left: 20px; width: 525px; float: left;">
+
+                                        <input type="hidden" id="Answer" value="CNI minimization" />
+
+                                        <input type="hidden" id="QuestionID" value="2" />
+
+                                        <div style="margin-left: 60px;">
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="CNI avoidance" id="radio5" class="css-checkbox" />
+                                                <label for="radio5" class="css-label radGroup1">A. CNI avoidance</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="CNI withdrawal" id="radio6" class="css-checkbox" />
+                                                <label for="radio6" class="css-label radGroup1">B. CNI withdrawal</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="CNI minimization" id="radio7" class="css-checkbox" />
+                                                <label for="radio7" class="css-label radGroup1">C. CNI minimization</label>
+                                            </p>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div style="width: 100%; text-align: right;">
+
+
+                                        <input type="hidden" value="2" class="QID" />
+
+                                        <input id="Button1" onclick="onclickAnswer(this);" class="btn btn-custom" type="button" value="Submit" style="width: 100px; margin-right: 100px;" />
+
+                                    </div>
+                                    <div id="AnswerDisp">
+                                    </div>
+                                </div>
+                                <div id="Content6" class="pt-page" data-value="6" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Therapeutic options to prevent or treat calcineurin inhibitor nephrotoxicity:</u></strong>
+                                    </p>
+                                    <center>
+                                    <table border="1"  class="tg justifytable" style="width:600px;" >
+                                        <tr style="color: White;">
+                                            <th class="blackborder">Option</th>
+                                            <th class="blackborder">Rationale</th>
+                                            <th class="blackborder">Effect</th>
+                                            <th class="blackborder">Comment</th>
+                                        </tr>
+                                        <tr style="background-color: #d1e5b0; text-align:center; ">
+                                            <td>CNI avoidance</td>
+                                            <td>Completely avoid exposure to CNIs</td>
+                                            <td>+/-</td>
+                                            <td>Increased rejection risk, maybe not with costimulatory blockers(e.g., belatacept)</td>
+                                        </tr>
+                                        <tr style=" text-align:center;">
+                                            <td>CNI withdrawal</td>
+                                            <td>Exposure to CNIs for only a limited time, to bridge the high rejection risk period
+                                                early after transplantation</td>
+                                            <td>+/-</td>
+                                            <td>Increased rejection risk</td>
+                                        </tr>
+                                        <tr style="background-color: d1e5b0; text-align:center;">
+                                            <td>CNI minimization</td>
+                                            <td>Lower but continuous exposure to CNIs</td>
+                                            <td>+</td>
+                                            <td>Safe on short term; long term results not known</td>
+                                        </tr>
+                                    </table>
+                                    </center>
+                                    <div class="refp">
+                                    <p style="margin-top: 150px;">Naesens M, et al. Clin J Am Soc Nephrol 4: 481–508, 2009</p>
+                                        </div>
+                                </div>
+                                <div id="Content7" class="pt-page" data-value="7" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>CNI minimization is associated with reduced overall graft failure and death-censored
+                                            graft failure:</u></strong>
+                                    </p>
+                                    <div style="width: 589px; margin: 0 auto;">
+                                        <img src="img/table2.png" style="width: 100%;" />
+                                    </div>
+                                 <div style="margin-left: 127px;">
+                                    <p style=" font-size: 12px; margin-top: 10px; padding-left:105px;">
+                                        CNI minimization when compared to standard CNI was associated with
+                                    </p>
+                                    <ul style="margin-left: 80px; font-size: 12px; margin-bottom:0px;" type='arrow'>
+                                        <li>Reduced overall graft failure (OR 0.73, P=0.009) </li>
+                                        <li>Reduced death-censored graft failure (OR 0.73, P=0.03)</li>
+                                        <li>No difference in graft failure secondary to rejection (OR 0.67 [95% CI, 0.34 - 1.31],P=0.24)</li>
+                                    </ul>                                     
+                                     </div>
+                                    <div class="refp">
+                                    <p>
+                                        CNI, calcineurin inhibitor; CI, confidence interval; df, degrees of freedom; OR, odds ratio.
+                                        <br />
+                                        Sharif A, et al. J Am Soc Nephrol. 2011;22:2107–2118.
+                                    </p>
+                                        </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div onclick="onclicknext(this);" id="btnnext" class="btnnext" style="">
+
+                                    <span style="" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                            <div id="ImgCont9" class="ImgCCC" style="display: none;">
+                                <p class="headingtxt">
+                                    <strong><u>Management: </u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Cyclosporine dose was reduced</li>
+                                    <li>Mycophenolic mofetil 1000 mg BD</li>
+                                    <li>After dose reduction, serum creatinine levels were stable between 1.8-2.0 mg/dL
+                                    </li>
+                                    <li>Hypertension was managed with valsartan 160 mg QD</li>
+                                    <li>Hyperlipidemia was managed by increasing the dose of fluvastatin to 40 mg QD</li>
+                                </ul>
+                            </div>
+                            <div id="ImgCont10" class="ImgCCC" style="display: none;">
+                                <p class="headingtxt" style="margin-left: 0px;">
+                                    <strong><u>Post-transplant skin changes: </u></strong>
+                                </p>
+
+                                <div style="width: 100%; margin-top: 30px;">
+                                    <div style="margin-top: -10px; text-align: center;">
+                                        <img src="img/skin changes.jpg" style="position: relative; height: 225px;" />
+                                        <p style="font-size: 10px;">Werschler WP. J Clin Aesthet Dermatol. Jul 2008; 1(2): 22–27</p>
+                                    </div>
+
+                                    <div style="position: absolute; width: 82%;">
+                                        <ul style="margin-left: 60px;">
+                                            <li>6 months post transplantation patient visited a dermatologist with complaints of
+                                                rough, reddish, scaly, red bumps on the sunexposed areas of his body. </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ImgCont11" class="ImgCCC pt-perspective" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray btnprev" style="">
+                                    <span style="margin-top: 235px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="pt-page pt-page-current" data-value="1" style="float: left;">
+                                    <p class="headingtxt" style="margin-left: 0px;">
+                                        <strong><u>Laboratory examination: </u></strong>
+                                    </p>
+
+                                    <div style="width: 100%;">
+                                        <div style="text-align: center; margin-top: 20px;">
+                                            <img src="img/skin changes.jpg" style="position: relative; height: 225px;" />
+                                            <p style="font-size: 10px;">Werschler WP. J Clin Aesthet Dermatol. Jul 2008; 1(2): 22–27</p>
+                                        </div>
+                                        <div style="">
+                                            <ul style="margin-left: 390px;">
+                                                <li>Biopsy revealed actinic keratosis</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="Content2" class="pt-page" data-value="3" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Laboratory findings:</u></strong>
+                                    </p>
+                                    <div style="width: 100%; min-height:300px;">
+                                        <div style="width: 35%; max-width: 35%; float:left;">
+                                            <ul style=" margin-left: 60px;">
+                                                <li>FSG: 100 mg/dL</li>
+                                                <li>HbA1C: 6.5%</li>
+                                                <li>Creatinine: 1.8 mg/dL</li>
+                                                <li>Blood Urea Nitrogen: 25 mg/dL</li>
+                                                <li>eGFR: 35 mL/min/1.73 m<sup>2</sup></li>
+                                                <li>Uric acid: 8.8 mg/dL</li>
+                                                <li>Total urine protein: 300 mg/d</li>
+                                            </ul>
+                                        </div>
+                                        <div style="width: 50%; margin-top: -10px; float: right;">
+                                            <ul style="margin-top: 10px; margin-left: 60px;">
+                                                <li style="font-weight:bold;">Lipid panel
+                                                <ul style="font-weight:normal;">
+                                                    <li>TC: 153 mg/dL</li>
+                                                    <li>TG: 220 mg/dL</li>
+                                                    <li>HDL-C: 31 mg/dL</li>
+                                                    <li>LDL-C: 80 mg/dL</li>
+                                                </ul>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                         </div>
+                                    <div class="refp" style="margin-top:100px;">
+                                        <p>FSG, fasting serum glucose; BUN, blood urea nitrogen; eGFR, estimated glomerular filtration rate; ALT, Alanine transaminase; HbA1C, glycosylated hemoglobin; UA, urinalysis; TSH, thyroid stimulating hormone; ECG, electrocardiography; TC, total cholesterol; TG, triglycerides; HDL-C, high density lipoprotein cholesterol; LDL-C, low density lipoprotein cholesterol; PRA, panel reactive antibody</p>
+                                        </div>
+
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                                <div onclick="onclicknext(this);" id="btnnext" class="btnnext" style="">
+
+                                    <span style="" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                            <div id="ImgCont12" class="ImgCCC pt-perspective" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray btnprev" style="">
+                                    <span style="margin-top: 235px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="pt-page pt-page-current" data-value="1" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u></u></strong>
+                                    </p>
+
+                                    <p style="margin-left: 40px; font-size: 18px;">
+                                        What could be the risk factor/s for development of actinic keratosis in this patient?
+                                    </p>
+
+                                    <div style="padding-top: 10px; padding-left: 20px; float: left;">
+                                        <input type="hidden" id="Answer" value="All of the above" />
+                                        <input type="hidden" id="QuestionID" value="3" />
+
+                                        <div style="margin-left: 60px;">
+                                            
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="History of frequent or intense sun-exposure"
+                                                    id="radio8" class="css-checkbox" />
+                                                <label for="radio8" class="css-label radGroup1" style="max-width: 91%;">
+                                                 A.  History of frequent or intense sun-exposure (patient worked as a construction site supervisor)</label>
+                                            </p>
+                                            <p style="margin-top: 30px;">
+                                                <input type="radio" name="radiog_lite" value="Immunosuppressive therapy" id="radio9"
+                                                    class="css-checkbox" />
+                                                <label for="radio9" class="css-label radGroup1">
+                                                    B. Immunosuppressive therapy</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="Age" id="radio10" class="css-checkbox" />
+                                                <label for="radio10" class="css-label radGroup1">
+                                                    C. Age</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="All of the above" id="radio11" class="css-checkbox" />
+                                                <label for="radio11" class="css-label radGroup1">
+                                                    D. All of the above</label>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="clearfix">
+                                    </div>
+                                    <div style="width: 100%; text-align: right;">
+
+                                        <input type="hidden" value="3" class="QID" />
+                                        <input id="Button2" onclick="onclickAnswer(this);" class="btn btn-custom" type="button" value="Submit" style="width: 100px; margin-right: 100px;" />
+
+                                    </div>
+                                    <div id="AnswerDisp">
+                                    </div>
+                                </div>
+                                <div id="Content2" class="pt-page" data-value="2" style="text-align: center;">
+                                    <p class="headingtxt">
+                                        <strong><u>CNI therapy is associated with increased risk of skin cancer:</u></strong>
+                                    </p>
+                                    <!-- <img src="img/table3.png" style="margin-top: 20px;" />-->
+                                    <center>
+                                    <table style="width:680px;" class="bordertable">
+                                        <tr style="background-color:#9bbb59; color:white; text-align:center;">
+                                            <td style="width:120px; pa">Calcineurin inhibitor</td>
+                                            <td>Cyclosporin A (CsA)</td>
+                                            <td>Tacrolimus</td>
+                                        </tr>
+                                        <tr style="background-color:#dee7d1;">                                            
+                                            <td>Effect on skin cancer</td>
+                                            <td>
+                                                <ul>
+                                                    <li>200-fold increase in skin cancer</li>
+                                                    <li>65-fold increase in squamous cell cancer</li>
+                                                </ul>
+
+                                            </td>
+                                            <td>
+                                                Lower compared with CsA in young transplant recipients
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color:#eff3ea;">                                            
+                                            <td>Effect on DNA repair</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Inhibits nucleotide excision repair via Calcineurin</li>
+                                                    <li>Down regulates xeroderma pigmentosum A protein, polymerase beta, p53</li>
+                                                </ul>
+                                            </td>
+                                            <td>Unknown</td>
+                                        </tr>
+                                    </table>
+                                        </center>
+                                    <div class="refp">
+                                    <p style=" margin-top: 120px;">Kuschal C, et al. Exp Dermatol. 2012 Jan;21(1):2-6</p>
+                                        </div>
+                                </div>
+                                <div id="Content3" class="pt-page" data-value="2" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u></u></strong>
+                                    </p>
+                                    <p style="text-align:center; margin-top: 150px;">The patient has..</p>
+                                    <ul style="width: 380px; margin: 0 auto; font-size: 15px;">
+                                        <li>CNI toxicity</li>
+                                        <li>A diagnosed pre-malignant condition</li>
+                                    </ul>
+                                    <p style="margin-left:200px; margin-top: 20px; font-size: 18px;"><strong>Would everolimus be an appropriate treatment option..</strong></p>
+                                </div>
+                                <div id="Content4" class="pt-page" data-value="3" style="text-align: center;">
+                                    <p class="headingtxt" style="margin-left: 0px;">
+                                        <strong><u style="">Relevance of everolimus:</u></strong>
+                                    </p>
+                                    <img src="img/Relevance-of-everolimus.png" style="margin-top: 30px;" />
+                                    <div class="refp" style="text-align:justify; margin-left:30%;">
+                                    <p style=" margin-top: 100px;">
+                                        1. Langer RM, et al. Transpl Int. 2012;25:592-602.<br />
+                                        2. Morales JM et al. Transplant Proc 2005;37:693–6.<br />
+                                        3. Zeier M, van der Giet M. Transpl Int 2011;24:30–42.<br />
+                                        4. Kauffman HM et al. Transplantation. 2005;80:883–9.
+                                    </p>
+                                        </div>
+                                </div>
+                                <div id="Content5" class="pt-page" data-value="4" style="text-align:center">
+                                    <p class="headingtxt">
+                                        <strong><u>Everolimus with CNI minimization provides similar efficacy to standard CNI
+                                            strategies:</u></strong>
+                                    </p>
+                                    <img src="img/graph29frame.png" style="margin-top: 20px; " />
+                                    <div class="refp">
+                                        <p style=" margin-top: 100px;">Campistol JM et al. Transplantation. 2011 Aug 15;92(3 Suppl):S3-26.</p>
+                                    </div>
+                                </div>
+                                <div id="Content6" class="pt-page" data-value="5" style="text-align: center;">
+                                    <p class="headingtxt">
+                                        <strong><u>De novo EVR + CNI minimization: Renal benefits in kidney transplantation:</u></strong>
+                                    </p>
+                                    <img src="img/graph30frame.png" style="margin-top: 0px;" />
+                                    <div style="width:475px; text-align:center; max-width:600px; margin:0px auto;">
+                                    <table style="" class="tdwidth">
+                                        <tr style="font-size: 11px; font-weight: bold;">
+                                            <td>A2309<sup>1</sup><br />
+                                                CsAr+EVR 0.75</td>
+                                            <td>A2309<sup>1</sup><br />
+                                                CsA<sub>s</sub>+MPA</td>
+                                            <td>ASSET<sup>2</sup><br />
+                                                TAC<sub>vl</sub>+EVR 1.5</td>
+                                            <td>ASSET<sup>2</sup><br />
+                                                TAC<sub>r</sub>+EVR 1.5</td>
+                                        </tr>
+                                        <tr style="font-size: 8px;">
+                                            <td>CSA<br />
+                                                100-200 ng/mL M0-M2<br />
+                                                75-150 ng/mL M2-M4
+                                                <br />
+                                                50-100 ng/mL M4-M6<br />
+                                                25-50 ng/mL M6-M12<br />
+                                                N=277</td>
+                                            <td>CSA<br />
+                                                200-300 ng/mL M0-M2<br />
+                                                100-250 ng/mL M2-M12<br />
+                                                N=277</td>
+                                            <td>TAC<br />
+                                                1-7 ng/mL M0-M3
+                                                <br />
+                                                1.5-3 ng/mL M4-M12<br />
+                                                N=107</td>
+                                            <td>TAC<br />
+                                                4-7 ng/mL M0-M12<br />
+                                                N=117</td>
+                                        </tr>
+
+                                    </table>
+                                        </div>
+                                    <p style="text-align: center;">CNI, calcineurin inhibitor; CsA, cyclosporine; eGFR, estimated glomerular filtration<br />
+                                        rate; EVR, everolimus;  M, month; MPA, mycophenolate acid; TAC, tacrolimus.</p>
+                                    <div class="refp">
+                                    <p>Tedesco Silva H et al. Am J Transplant. 2010;10:1401–13; 2. Langer RM, et al. Transpl Int. 2012;25:592-602</p>
+                                        </div>
+                                </div>
+
+
+                                <div id="Content7" class="pt-page" data-value="7" style="text-align: center;">
+                                    <p class="headingtxt">
+                                        <strong><u>Reduced incidence of neoplasms with everolimus and low CNI compared with
+                                            MPA and standard CNI:</u></strong>
+                                    </p>
+                                    <img src="img/graph32frame.png" style="margin-top: 20px;" />
+                                    <div class="refp">
+                                    <p>
+                                        EVR, everolimus; MPA, mycophenolate acid.<br />
+                                        1. Tedesco Silva H et al. Am J Transplant. 2010;10:1401–13; 2. Cibrik D et al. Transplantation. 2013;95:933-942
+                                    </p>
+                                        </div>
+                                </div>
+
+                                <div id="Content8" class="pt-page" data-value="8" style="float: left;">
+
+                                    <p class="headingtxt">
+                                        <strong><u>EVR is associated with decrease in CMV infections compared to MMF:</u></strong>
+                                    </p>
+                                    <div style="margin:0px auto; text-align:center;">
+                                    <img src="img/graph33frame.png" style="width:95%;" />
+                                        </div>
+                                    <div class="refp" style="margin-top:30px;">
+                                    <p>
+                                        EVR, everolimus; MPA, mycophenolic acid; CMV, cytomegalovirus.<br />
+                                        Brennan DC, et al. Am J Transplant. 2011;11;2453–2462
+                                    </p>
+                                        </div>
+                                </div>
+
+                                <div id="Content9" class="pt-page" data-value="9" style="text-align: center;">
+
+                                    <p class="headingtxt">
+                                        <strong><u>Everolimus and low 
+                                             significantly reduced the incidence of BK virus compared with MPA and standard CNI:</u></strong>
+                                    </p>
+                                    <img src="img/graph34frame.png" style="margin-top: 20px;" />
+                                    <div style="vertical-align: bottom; margin-top:30px;" class="refp">
+                                        <p>
+                                            CsA, Cyclosporine; MPA, mycophenolate acid.
+                                        <br />
+                                            Campistol JM et al. Transplantation. 2011 Aug 15;92(3 Suppl):S3-26.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="Content10" class="pt-page" data-value="10" style="text-align: center;">
+                                    <p class="headingtxt">
+                                        <strong><u>Pleiotropic effects of everolimus :</u></strong>
+                                    </p>
+                                    <img src="img/flowchart35frame.png" style="width: 740px;" />
+                                    <div class="refp">
+                                    <p style=" margin-top: 70px;">Adapted from Campistol JM, et al. Transplantation. 2011 Aug 15;92(3 Suppl):S3 26</p>
+                                        </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <div onclick="onclicknext(this);" id="btnnext" class="btnnext" style="">
+
+                                    <span style="" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+
+                            <div id="ImgCont13" class="ImgCCC pt-perspective" style="display: none;">
+
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray btnprev" style="">
+                                    <span style="margin-top: 235px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="pt-page pt-page-current" data-value="1" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u></u></strong>
+                                    </p>
+
+                                    <p style="margin-left: 40px; font-size: 18px;">
+                                        What characteristics need to be evaluated in this patient before initiating treatment
+                                        with everolimus?
+                                    </p>
+
+                                    <div style="padding-top: 10px; padding-left: 20px; float: left;">
+                                        <input type="hidden" id="Answer" value="All of the above" />
+                                        <input type="hidden" id="QusetionID" value="4" />
+
+
+                                        <div style="margin-left: 60px;">
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="Immunologic risk" id="radio12" class="css-checkbox" />
+                                                <label for="radio12" class="css-label radGroup1" style="max-width: 91%;">
+                                                    A. Immunologic risk</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="Lipid profile" id="radio13" class="css-checkbox" />
+                                                <label for="radio13" class="css-label radGroup1">
+                                                    B. Lipid profile</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="Evaluation of malignancy" id="radio14"
+                                                    class="css-checkbox" />
+                                                <label for="radio14" class="css-label radGroup1">
+                                                    C. Evaluation of malignancy</label>
+                                            </p>
+                                            <p style="margin-top: 20px;">
+                                                <input type="radio" name="radiog_lite" value="All of the above" id="radio15" class="css-checkbox" />
+                                                <label for="radio15" class="css-label radGroup1">
+                                                    D.  All of the above</label>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div style="width: 100%; text-align: right;">
+
+                                        <input type="hidden" value="4" class="QID" />
+
+                                        <input id="Button3" onclick="onclickAnswer(this);" class="btn btn-custom" type="button" value="Submit" style="width: 100px; margin-right: 100px;" />
+                                    </div>
+                                    <div id="AnswerDisp"></div>
+                                </div>
+                                <div id="Content2" class="pt-page" data-value="2" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>The everolimus patient:</u></strong>
+                                    </p>
+                                    <div style="width: 100%;">
+                                        <div style="width: 65%; width: 400px; margin-left: 140px; position: relative; margin-top: 20px;">
+                                            <ol style="margin-top: 40px; margin-left: 60px; width:350px;" class="yesno">
+                                                <li>Adult over the age of 18 years</li>
+                                                <li>Primary renal transplant or secondary if not lost due to immunological reasons</li>
+                                        
+                                                <li>Multi-organ transplant recipient or received a kidney from a non-heart beating donor</li>
+                                        <li>Low to moderate immunological risk</li>
+                                        <li>High immunological risk (PRA >20%)</li>
+                                        <li>Severe, uncontrolled hyperlipidemia</li>
+                                        </ol>
+                                    </div>
+                                    <div style="width: 30%; margin-top: -10px; float: right; margin-top: -210px;">
+                                        <table border="0" style="margin-top: -60px;">
+                                            <tr>
+
+                                                <td style="width:50px;">Yes
+                                                </td>
+                                                <td style="width:50px;">No
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td style="padding-top: 8px; padding-left:8px;">
+                                                    <input type="checkbox" name="radiog_lite" onclick="onclickYesNo(this, true)" id="radio111" class="css-checkbox" />
+                                                    <label for="radio111" data-question="8" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+
+                                                </td>
+                                                <td style="padding-top: 8px; padding-left:3px;">
+                                                    <input type="checkbox" name="radiog_lite" onclick="onclickYesNo(this, false)" id="radio112" class="css-checkbox" />
+                                                    <label for="radio112" data-question="8" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+
+                                                </td>
+                                                <td style="color: #1388ab; padding-top: 8px;">
+                                                    <div><span class="glyphicon glyphicon-remove rem"></span><span class="glyphicon glyphicon-ok ok"></span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top:30px; padding-left:8px;">
+                                                    <input type="checkbox" name="radiog_lite1" onclick="onclickYesNo(this, true)" id="radio113" class="css-checkbox" />
+                                                    <label for="radio113" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="padding-top: 30px; padding-left:3px;">
+                                                    <input type="checkbox" name="radiog_lite1" onclick="onclickYesNo(this, false)" id="radio114" class="css-checkbox" />
+                                                    <label for="radio114" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="color: #1388ab; padding-top: 3px;">
+                                                    <div><span class="glyphicon glyphicon-remove rem"></span><span class="glyphicon glyphicon-ok ok"></span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 30px; padding-left:8px;">
+                                                    <input type="checkbox" name="radiog_lite2" onclick="onclickYesNo(this, true)" id="radio115" class="css-checkbox" />
+                                                    <label for="radio115" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="padding-top: 30px; padding-left:3px;">
+                                                    <input type="checkbox" name="radiog_lite2" onclick="onclickYesNo(this, false)" id="radio116" class="css-checkbox" />
+                                                    <label for="radio116" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="color: #1388ab; padding-top: 42px;">
+                                                    <div><span class="glyphicon glyphicon-remove rem"></span><span class="glyphicon glyphicon-ok ok"></span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 15px; padding-left:8px;">
+                                                    <input type="checkbox" name="radiog_lite3" onclick="onclickYesNo(this, true)" id="radio117" class="css-checkbox" />
+                                                    <label for="radio117" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="padding-top: 15px; padding-left:3px;">
+                                                    <input type="checkbox" name="radiog_lite3" onclick="onclickYesNo(this, false)" id="radio118" class="css-checkbox" />
+                                                    <label for="radio118" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="color: #1388ab; padding-top: 15px;">
+                                                    <div><span class="glyphicon glyphicon-remove rem"></span><span class="glyphicon glyphicon-ok ok"></span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 10px; padding-left:8px;">
+                                                    <input type="checkbox" name="radiog_lite4" onclick="onclickYesNo(this, false)" id="radio119" class="css-checkbox" />
+                                                    <label for="radio119" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="padding-top: 10px; padding-left:3px;">
+                                                    <input type="checkbox" name="radiog_lite4" onclick="onclickYesNo(this, true)" id="radio120" class="css-checkbox" />
+                                                    <label for="radio120" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="color: #1388ab; padding-top: 10px;">
+                                                    <div><span class="glyphicon glyphicon-remove rem"></span><span class="glyphicon glyphicon-ok ok"></span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 10px; padding-left:8px;">
+                                                    <input type="checkbox" name="radiog_lite5" onclick="onclickYesNo(this, false)" id="radio121" class="css-checkbox" />
+                                                    <label for="radio121" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="padding-top: 10px; padding-left:3px;">
+                                                    <input type="checkbox" name="radiog_lite5" onclick="onclickYesNo(this, true)" id="radio122" class="css-checkbox" />
+                                                    <label for="radio122" data-question="9" class="css-label radGroup1" style="max-width: 91%;">
+                                                    </label>
+                                                </td>
+                                                <td style="color: #1388ab; padding-top: 10px;">
+                                                    <div><span class="glyphicon glyphicon-remove rem"></span><span class="glyphicon glyphicon-ok ok"></span></div>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div id="Content3" class="pt-page" data-value="4" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Discussion Point:</u></strong>
+                                    </p>
+
+                                    <ul style="margin-top: 40px; margin-left: 60px;">
+                                        <li>The Certican Patient – does this patient qualify?
+                                            <ul>
+                                                <li>Elevated lipids from baseline – controlled with statin</li>
+
+                                                <li>Patient diagnosed with premalignant condition actinic keratosis; no prior history
+                                                    of malignancies</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div id="Content4" class="pt-page" data-value="5" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Conversion to everolimus:</u></strong>
+                                    </p>
+
+                                    <ul style="margin-top: 40px; width: 570px; margin: 0 auto; margin-top: 40px;">
+                                        <li>Management
+                                            <ul>
+                                                <li>Cyclospsorine dose was reduced to 25 mg BD</li>
+                                                <li>Everolimus, initiated at 1.5 mg/day (target trough level 3-8 ng/mL)</li>
+                                                <li>Prednisone 10 mg/day; tapered off</li>
+                                                <li>Continued on antihypertensives and statins</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul style="margin-top: 20px; width: 570px; margin: 0 auto;">
+                                        <li>After 12 months
+                                            <ul>
+                                                <li>Serum creatinine level was 1.2 mg/dL</li>
+                                                <li>Hypertension and hyperlipidemeia controlled</li>
+                                                <li>No recurrence of actinic keratosis</li>
+
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div id="Content5" class="pt-page" data-value="6" style="float: left;">
+                                    <p class="headingtxt">
+                                        <strong><u>Algorithm for early conversion to everolimus with CNI minimization:</u></strong>
+                                    </p>
+                                    <div style="margin:0px auto; width:575px;">
+                                    <img src="img/image42frame.png" style="width: 600px;" />
+                                        </div>
+                                    <div class="refp" style="margin-top:20px;">
+                                    <p>Campistol JM, et al. Transplantation. 2011 Aug 15;92(3 Suppl):S3 26</p>
+                                        </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div onclick="onclicknext(this);" id="btnnext" class="btnnext" style="">
+
+
+                                    <span style="" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                 
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="botlogo" style="width: 139px; height: 167px; background-image: url(img/Layer4.png); position: absolute; bottom: 15px; right: 0px; float: left;"></div>
+    </div>
+
+
+
+
+
+    <div class="btn-group dropup" style="position: absolute; right: 0; bottom: 0;">
+        <button type="button" id="ActivateBtnMod" class="btn btn-primary cusBtn"
+            style="background-color: #8dc63f; margin-top: -3px; display: none" onclick="onClickActivateCase();">
+            <span class="glyphicon glyphicon-cog"></span>
+        </button>
+    </div>
+    <div style="display: none;">
+    </div>
+
+
+    <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="ImgContent">
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-top: 0px;">
+                        Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Page Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered" style="margin-bottom: 0px;">
+                        <thead>
+                            <tr>
+                                <th>Page Name</th>
+                                <th style="width: 180px;">Status</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="table-responsive" style="height: 300px; overflow: auto;">
+                        <table class="table table-bordered">
+                            <tbody id="pageDatatable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="location.reload();" data-dismiss="modal"
+                        style="margin-top: 0px;">
+                        Close</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="modal fade" id="myModalCase" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" style="width: 70%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;</button>
+                    <h4 class="modal-title" id="H1">Case Settings</h4>
+                </div>
+                <div class="modal-body">
+
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">Case 1</a></li>
+                        <li><a href="#profile" data-toggle="tab">Case 2</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <table class="table table-bordered" style="margin-bottom: 0px;">
+                                <thead>
+                                </thead>
+                            </table>
+                            <div class="table-responsive" style="height: 350px; overflow: auto;">
+                                <table class="table table-bordered">
+                                    <tbody id="caseSetting1">
+                                        <tr>
+                                            <th>Image ID</th>
+                                            <th style="">Jan 2013</th>
+                                            <th style="">May 2013</th>
+                                            <th style="">Jun 2013</th>
+                                        </tr>
+                                        <tr class="Presentation">
+                                            <td>Presentation</td>
+                                            <td class="Jan2013"></td>
+                                            <td class="May2013"></td>
+                                            <td class="Jun2013"></td>
+                                        </tr>
+                                        <tr class="Relevant History">
+                                            <td>Relevant History</td>
+                                            <td class="Jan2013"></td>
+                                            <td class="May2013"></td>
+                                            <td class="Jun2013"></td>
+                                        </tr>
+                                        <tr class="Examination">
+                                            <td>Examination</td>
+                                            <td class="Jan2013"></td>
+                                            <td class="May2013"></td>
+                                            <td class="Jun2013"></td>
+                                        </tr>
+                                        <tr class="Laboratory findings">
+                                            <td>Laboratory findings</td>
+                                            <td class="Jan2013"></td>
+                                            <td class="May2013"></td>
+                                            <td class="Jun2013"></td>
+                                        </tr>
+                                        <tr class="Management">
+                                            <td>Management</td>
+                                            <td class="Jan2013"></td>
+                                            <td class="May2013"></td>
+                                            <td class="Jun2013"></td>
+                                        </tr>
+                                        <tr class="Question">
+                                            <td>Question</td>
+                                            <td class="Jan2013"></td>
+                                            <td class="May2013"></td>
+                                            <td class="Jun2013"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="profile">
+                            <table class="table table-bordered" style="margin-bottom: 0px;">
+                                <thead>
+                                </thead>
+                            </table>
+                            <div class="table-responsive" style="height: 350px; overflow: auto;">
+                                <table class="table table-bordered">
+                                    <tbody id="caseSetting2">
+                                        <tr>
+                                            <th>Image ID</th>
+                                            <th style="">Apr 2012</th>
+                                            <th style="">Jun 2013</th>
+                                            <th style="">Aug 2013</th>
+                                            <th style="">Oct 2013</th>
+                                            <th style="">Apr 2014</th>
+                                        </tr>
+                                        <tr class="Presentation">
+                                            <td>Presentation</td>
+                                            <td class="Apr2012"></td>
+                                            <td class="Jun2013"></td>
+                                            <td class="Aug2013"></td>
+                                            <td class="Oct2013"></td>
+                                            <td class="Apr2014"></td>
+                                        </tr>
+                                        <tr class="Relevant History">
+                                            <td>Relevant History</td>
+                                            <td class="Apr2012"></td>
+                                            <td class="Jun2013"></td>
+                                            <td class="Aug2013"></td>
+                                            <td class="Oct2013"></td>
+                                            <td class="Apr2014"></td>
+                                        </tr>
+                                        <tr class="Examination">
+                                            <td>Examination</td>
+                                            <td class="Apr2012"></td>
+                                            <td class="Jun2013"></td>
+                                            <td class="Aug2013"></td>
+                                            <td class="Oct2013"></td>
+                                            <td class="Apr2014"></td>
+                                        </tr>
+                                        <tr class="Laboratory findings">
+                                            <td>Laboratory findings</td>
+                                            <td class="Apr2012"></td>
+                                            <td class="Jun2013"></td>
+                                            <td class="Aug2013"></td>
+                                            <td class="Oct2013"></td>
+                                            <td class="Apr2014"></td>
+                                        </tr>
+                                        <tr class="Management">
+                                            <td>Management</td>
+                                            <td class="Apr2012"></td>
+                                            <td class="Jun2013"></td>
+                                            <td class="Aug2013"></td>
+                                            <td class="Oct2013"></td>
+                                            <td class="Apr2014"></td>
+                                        </tr>
+                                        <tr class="Question">
+                                            <td>Question</td>
+                                            <td class="Apr2012"></td>
+                                            <td class="Jun2013"></td>
+                                            <td class="Aug2013"></td>
+                                            <td class="Oct2013"></td>
+                                            <td class="Apr2014"></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="UpdateImageStatus();" data-dismiss="modal"
+                        style="margin-top: 0px;">
+                        Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <div id="data">
+        <items>
+          <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="-910" text="Jan 2013">
+          </element>
+            
+          <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="-620" text="May 2013">
+          </element>
+
+          <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="-320" text="Jun 2013">
+          </element>
+
+                <element type="image" id="Element1" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont10" along="0" distance="-20">
+          </element>
+          <element type="image" id="Element2" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont11" along="0" distance="-50">
+          </element>
+          <element type="image" id="Element3" path="7" source="img/Ques.png" dsource="img/Ques_disable.png" dataID ="ImgCont12" along="0" distance="-80">
+          </element>
+          <element type="image" id="Element4" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont13" along="0" distance="-140">
+          </element>
+
+
+     
+          <element type="image" id="img6" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont6" along="0" distance="-350">
+          </element>
+          <element type="image" id="img7" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont7" along="0" distance="-400">
+          </element>
+          <element type="image" id="img8" path="7" source="img/Ques.png" dsource="img/Ques_disable.png" dataID ="ImgCont8" along="0" distance="-450">
+          </element>
+          <element type="image" id="img9" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont9" along="0" distance="-500">
+          </element>
+      
+                 <element type="image" id="img1" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont1" along="0" distance="-650">
+          </element>
+          <element type="image" id="img2" path="2" source="img/History.png" dsource="img/History_disable.png" dataID ="ImgCont2" along="0" distance="-680">
+          </element>
+          <element type="image" id="img3" path="3" source="img/exam.png" dsource="img/exam_disable.png" dataID ="ImgCont3" along="0" distance="-720">
+          </element>
+          <element type="image" id="img4" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont4" along="0" distance="-750">
+          </element>
+          <element type="image" id="img5" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont5" along="0" distance="-780">
+          </element>
+        </items>
+    </div>
+    <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+
+    <script src="js/touch.timeline.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap-switch.min.js"></script>
+
+    <script src="js/jquery.dlmenu.js"></script>
+
+    <script src="js/pagetransitions.js"></script>
+
+   <!-- <script type="text/javascript" src="js/sketch.js"></script>-->
+
+   <!-- <script type="text/javascript" src="js/whiteBoard.js"></script>-->
+    <script src="js/touch.js"></script>
+
+    <script>
+        //$(function () {
+        //    $('#tools_sketch').sketch({ defaultColor: "#000000" });
+        //});
+    </script>
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            if (getParameterByName("type") == "2") {
+                sessionStorage.Moderator = true;
+            }
+            if (getParameterByName("show") == "1") {
+                $('#StartContent').show();
+            }
+            else {
+                $('#TitleContent').show();
+            }
+
+
+            if (sessionStorage.Moderator != undefined && sessionStorage.Moderator) {
+                $("#ActivateBtnMod").show();
+            }
+
+            positionLogo();
+            $(".li_menu").click(function (event) {
+                if ($(this).hasClass("disabled"))
+                    return
+
+                $(".li_menu").removeClass("active");
+                $(this).addClass("active");
+            });
+            $('input[name="my-checkbox"]').bootstrapSwitch();
+        });
+
+        function onclickprev(ele) {
+
+            clearAll();
+            //var currentContent = $(ele).parent().find("#currentContent").val();
+            //var totalElements = $(ele).parent().find(".conClass");
+            //if (parseInt(currentContent) > 1) {
+            //    //if (parseInt(currentContent) == totalElements.length) {
+            //    //    $(ele).parent().find("#btnnext").attr("class", "");
+            //    //}
+
+            //    //$(ele).parent().find(".conClass").hide();
+            //    //$(ele).parent().find("#Content" + (parseInt(currentContent) - 1)).fadeIn("slow");
+            //    $(ele).parent().find("#currentContent").val((parseInt(currentContent) - 1));
+
+            //}
+            //if ((parseInt(currentContent) - 1) == 1) {
+            //    $(ele).parent().find("#btnprev").attr("class", "colorGray");
+            //}
+
+        }
+
+
+        function onclicknext(ele) {
+
+            clearAll();
+            //var currentContent = $(ele).parent().find("#currentContent").val();
+            //var totalElements = $(ele).parent().find(".conClass");
+            //if (parseInt(currentContent) < totalElements.length) {
+            //    //$(ele).parent().find(".conClass").hide();
+            //    //$(ele).parent().find("#Content" + (parseInt(currentContent) + 1)).fadeIn("slow");
+            //    $(ele).parent().find("#currentContent").val((parseInt(currentContent) + 1));
+            //    $(ele).parent().find("#btnprev").removeClass("colorGray");
+            //    if ((parseInt(currentContent) + 1) == totalElements.length) {
+            //        $(ele).parent().find("#btnnext").attr("class", "colorGray");
+            //    }
+            //}
+        }
+
+
+        function positionLogo() {
+            document.getElementById("logo").style.left = (window.innerWidth) - 239 + "px";
+        }
+        function changecontent(ele, step) {
+            var currentID = 1;
+            var nextID = 1;
+            var elements = $(ele).parent().parent().find(".content");
+            for (var i = 0; i < elements.length; i++) {
+                if ($(elements[i]).css('display') != 'none')
+                    currentID = $(elements[i]).data("value");
+            }
+
+            if (step == 'next') {
+                if (currentID < elements.length)
+                    nextID = parseInt(currentID) + 1;
+                else
+                    return;
+            }
+            else {
+                if (currentID > 1)
+                    nextID = parseInt(currentID) - 1;
+                else
+                    return;
+            }
+
+            $(ele).parent().parent().find('#content' + currentID).fadeOut("slow", function () {
+                $(ele).parent().parent().find('#content' + nextID).css('display', 'block');
+            });
+
+        }
+    </script>
+
+    <script src="js/raphael-min.js"></script>
+
+    <script src="js/raphael-guides.js"></script>
+
+    <script>
+        var img1, img2, img3, img4;
+        
+        var pathArray = new Array();
+        var path1, path2, path3, path4, path;
+        var animationObjects = [];
+        var g_animationController = null;
+        $(function () {
+            LoadObjects();
+        });
+        function LoadObjects() {
+            var xml = document.getElementById("data").innerHTML;
+            var pathName = ["P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7"];
+            g_animationController = new AnimationController(data, "anican");
+            var items = $(xml).find('element');
+            for (var i = 0; i < items.length; i++) {
+                var element = items[i];
+                var object = {};
+                for (var eIndex = 0; eIndex < element.attributes.length; eIndex++)
+                    object[element.attributes[eIndex].name] = element.attributes[eIndex].value;
+                animationObjects.push(object);
+            }
+            g_animationController.loadObjects(animationObjects);
+        }
+
+        window.onload = function () {
+            //onLoadDisablePage();
+            document.getElementById("range").addEventListener("change", function (e) {
+                //document.querySelector(".range").textContent = e.currentTarget.value;
+
+                if (value > 0 && value < 5) {
+                    UpdateTimeLine(1);
+                }
+                else if (value > 35 && value < 39) {
+                    UpdateTimeLine(2);
+                }
+                else if (value > 94)
+                    UpdateTimeLine(3);
+            });
+        }
+
+        function SlideSlider(value) {
+            var distance = 0;
+            if (value == 22) {
+                UpdateTimeLine(1);
+                distance = -350;
+            }
+            else if (value == 37) {
+                UpdateTimeLine(2);
+                distance = -50;
+            }
+            else if (value == 48) {
+                UpdateTimeLine(3);
+                distance = 280;
+            }
+
+            if (position > distance)
+            {
+                g_animationController.scrollUp(position, distance);
+                position = distance;
+              
+            }
+            else
+            {
+                g_animationController.scrollDown(position, distance);
+                position = distance;
+            }
+
+        }
+
+        function UpdateTimeLine(value) {
+            $("#timeline-event-node-1").parent().parent().find('.timeline-title').css('margin-left', '0px');
+            $("#range").val(value);
+            if (parseInt(value) == 2) {
+                $("#timeline-event-node-1").parent().parent().find('.selected-event').removeClass('selected-event');
+                $("#timeline-event-node-1").addClass('selected-event');
+
+                $("#timeline-event-node-1").parent().parent().find('.arrow_box').removeClass('arrow_box');
+                $("#timeline-event-node-1").parent().find('.timeline-title').addClass('arrow_box');
+
+                $("#timeline-event-node-1").parent().find('.arrow_box').css('margin-left', '0px');
+                $(".timeline-draggable").css("left", "348px");
+                clearAll();
+            }
+            else if (parseInt(value) == 1) {
+                $("#timeline-event-node-0").parent().parent().find('.selected-event').removeClass('selected-event');
+                $("#timeline-event-node-0").addClass('selected-event');
+
+                $("#timeline-event-node-0").parent().parent().find('.arrow_box').removeClass('arrow_box');
+                $("#timeline-event-node-0").parent().find('.timeline-title').addClass('arrow_box');
+
+                $("#timeline-event-node-0").parent().find('.arrow_box').css('margin-left', '-32px');
+                $(".timeline-draggable").css("left", "0px");
+                clearAll();
+
+            }
+            else if(parseInt(value) == 3) {
+                $("#timeline-event-node-2").parent().parent().find('.selected-event').removeClass('selected-event');
+                $("#timeline-event-node-2").addClass('selected-event');
+
+                $("#timeline-event-node-2").parent().parent().find('.arrow_box').removeClass('arrow_box');
+                $("#timeline-event-node-2").parent().find('.timeline-title').addClass('arrow_box');
+                $("#timeline-event-node-2").parent().find('.arrow_box').css('margin-left', '36px');
+                $(".timeline-draggable").css("left", "697px");
+                clearAll();
+            }
+        }
+
+        $(".ImgCCC").swipe({
+            //Generic swipe handler for all directions
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == "left")
+                    $(event.currentTarget).find(".btnnext").click();
+                else if (direction == "right")
+                    $(event.currentTarget).find(".btnprev").click();
+
+
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold: 30
+        });
+
+        var scroll
+
+        $("#anican").swipe({
+            //Generic swipe handler for all directions
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                console.log(position);
+                if (position <= -80)
+                    UpdateTimeLine(1);
+                else if (position > -80 && position <= 240)
+                    UpdateTimeLine(2);
+                else
+                    UpdateTimeLine(3);
+
+
+                if (direction == "up") {
+                    if (position < -300)
+                        return;
+                    //$("#range").val(parseInt($("#range").val()) - 5);
+                    g_animationController.scrollUp(position, position - (distance -20));
+                    position -= distance;
+                }
+                else if (direction == "down") {
+                    if (position > 380)
+                        return;
+
+                   
+
+                    //if (position > -200 && position < -100)
+                    //    UpdateTimeLine(23);
+                    //if (position > 0)
+                    //    UpdateTimeLine(30);
+                    //$("#range").val(parseInt($("#range").val()) + 5);
+                    g_animationController.scrollDown(position, position + (distance-20));
+                    position += distance;
+                }
+
+                //SlideSlider($("#range").val());
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold: 20
+        });
+
+
+
+        function onImageOut(ele, id) {
+            if (!$(ele).is(".disabled")) {
+                var element = $(document).find(".roadMnu");
+                $(element).removeClass("gray");
+            }
+        }
+
+        function onImageOver(ele, id) {
+            if (!$(ele).is(".disabled")) {
+                var element = $(document).find(".roadMnu");
+                var pathID = parseInt(id) - 1;
+                for (j = 0; j < element.length; j++) {
+                    if (j == pathID)
+                        $(element[j]).removeClass("gray");
+                    else
+                        $(element[j]).addClass("gray");
+                }
+
+            }
+        }
+
+        function onImageClick(ele, id) {
+            if (!$(ele).is(".disabled")) {
+                $('.ImgCCC').hide();
+                $('#ShowDiv').show();
+                $('#' + id).fadeIn('show');
+            }
+        }
+        var position = 0;
+        var thresold = 50;
+        function onScrollUp() {
+            g_animationController.scrollUp(position, position - thresold);
+            position -= thresold;
+            
+        }
+        function onScrollDown() {
+            
+            g_animationController.scrollDown(position, position + thresold);
+            position += thresold;
+        }
+
+        function onclickClose() {
+            clearAll();
+            $('#ShowDiv').fadeOut('slow', function () {
+                var elements = $(document).find(".ImgCCC");
+                for (var i = 0; i < elements.length; i++) {
+                    if ($(elements[i]).css("display") == "block") {
+                        $(elements[i]).find('.pt-page-current').removeClass('pt-page-current');
+                        $(elements[i]).find('#Content1').addClass('pt-page-current');
+                        $(elements[i]).find('#currentContent').val(1);
+                        $(elements[i]).find("#btnnext").find("span").css("background-color", "rgba(169, 169, 169, 0.99)");
+
+                        $(elements[i]).find("#btnnext").find("span").css("color", "black");
+                        $(elements[i]).find("#btnprev").find("span").css("background-color", "transparent");
+                        $(elements[i]).find("#btnprev").find("span").css("color", "transparent");
+                    }
+                }
+               
+            });
+
+
+
+        }
+    </script>
+</body>
+</html>

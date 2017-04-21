@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="100" text="Apr 2013">
+  </element>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="-300" text="May 2013">
+  </element>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="-650" text="Aug 2013">
+  </element>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="-950" text="Oct 2013">
+  </element>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="-1170" text="Apr 2014">
+  </element>
+  <element type="image" id="img2c1" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont2c1" along="0" distance="-20">
+  </element>
+  <element type="image" id="img2c2" path="2" source="img/History.png" dsource="img/History_disable.png" dataID ="ImgCont2c2" along="0" distance="-50">
+  </element>
+  <element type="image" id="img2c3" path="3" source="img/exam.png" dsource="img/exam_disable.png" dataID ="ImgCont2c3" along="0" distance="-100">
+  </element>
+  <element type="image" id="img2c4" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont2c4" along="0" distance="-150">
+  </element>
+  <element type="image" id="img2c5" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont2c5" along="0" distance="-200">
+  </element>
+  <element type="image" id="img2c6" path="7" source="img/Ques.png" dsource="img/Ques_disable.png" dataID ="ImgCont2c6" along="0" distance="-250">
+  </element>
+  <element type="image" id="img2c7" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont2c7" along="0" distance="-430">
+  </element>
+  <element type="image" id="img2c8" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont2c8" along="0" distance="-480">
+  </element>
+  <element type="image" id="img2c9" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont2c9" along="0" distance="-530">
+  </element>
+  <element type="image" id="img2c10" path="7" source="img/Ques.png" dsource="img/Ques_disable.png" dataID ="ImgCont2c10" along="0" distance="-580">
+  </element>
+  <element type="image" id="img2c11" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont2c11" along="0" distance="-830">
+  </element>
+  <element type="image" id="img2c12" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont2c12" along="0" distance="-880">
+  </element>
+  <element type="image" id="img2c13" path="7" source="img/Ques.png" dsource="img/Ques_disable.png" dataID ="ImgCont2c13" along="0" distance="-930">
+  </element>
+  <element type="image" id="img2c14" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont2c14" along="0" distance="-1130">
+  </element>
+  <element type="image" id="img2c15" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont2c15" along="0" distance="-1320">
+  </element>
+</items>

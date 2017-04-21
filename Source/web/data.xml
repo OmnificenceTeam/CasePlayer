@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="20" text="Jan 2013">
+  </element>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="20" text="May 2013">
+  </element>
+  <element type="line" path="1"  x="0" y="0" a="600" b="1" along="0" distance="20" text="Jun 2013">
+  </element>
+  <element type="image" id="img1" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont1" along="0" distance="-20">
+  </element>
+  <element type="image" id="img2" path="2" source="img/History.png" dsource="img/History_disable.png" dataID ="ImgCont2" along="0" distance="-50">
+  </element>
+  <element type="image" id="img3" path="3" source="img/exam.png" dsource="img/exam_disable.png" dataID ="ImgCont3" along="0" distance="-80">
+  </element>
+  <element type="image" id="img4" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont4" along="0" distance="-150">
+  </element>
+  <element type="image" id="img5" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont5" along="0" distance="-200">
+  </element>
+  <element type="image" id="img6" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont6" along="0" distance="-350">
+  </element>
+  <element type="image" id="img7" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont7" along="0" distance="-400">
+  </element>
+  <element type="image" id="img8" path="7" source="img/Ques.png" dsource="img/Ques_disable.png" dataID ="ImgCont8" along="0" distance="-450">
+  </element>
+  <element type="image" id="img9" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont9" along="0" distance="-500">
+  </element>
+  <element type="image" id="img10" path="1" source="img/presentation.png" dsource="img/presentation_disable.png" dataID ="ImgCont10" along="0" distance="-650">
+  </element>
+  <element type="image" id="img11" path="4" source="img/lab.png" dsource="img/lab_disable.png" dataID ="ImgCont11" along="0" distance="-700">
+  </element>
+  <element type="image" id="img12" path="7" source="img/Ques.png" dsource="img/Ques_disable.png" dataID ="ImgCont12" along="0" distance="-750">
+  </element>
+  <element type="image" id="img13" path="5" source="img/treatment.png" dsource="img/treatment_disable.png" dataID ="ImgCont13" along="0" distance="-800">
+  </element>
+</items>

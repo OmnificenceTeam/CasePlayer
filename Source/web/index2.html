@@ -1,0 +1,1076 @@
+﻿
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="dasky/css/dasky.min.css" />
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-switch.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/animations.css" rel="stylesheet" />
+    <link href="css/component.css" rel="stylesheet" />
+    	<link rel="stylesheet" href="css/touch.timeline.light.css" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/service/Service.js"></script>
+    <script src="js/service/ServiceData.js"></script>
+    <script src="js/mod.js"></script>
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+        #dasky {
+            font-family: 'Droid Sans', sans-serif;
+        }
+    </style>
+
+
+</head>
+<body style="overflow: hidden;" onresize="positionLogo()" onload="">
+    <div style="z-index: 20; width: 100%; height: 100px; position: fixed; top: 0px; opacity: 1;">
+        <img src="img/Header.jpg" style="height: 100px; width: 1024px; top: 0px; z-index: 1; float: left;" />
+        <img src="img/Transexpert-logo.png" id="logo" style="height: 72px; float: left; width: 239px; top: 15px; z-index: 1; left: 650px; position: absolute;" />
+    </div>
+    <div class="container" id="content" style="height: 100%; width: 100%; top: 100px; position: fixed; -webkit-overflow-scrolling: touch; background-color: Black;">
+
+        <div id="pt-main" class="pt-perspective">
+            <div id="pt-page-1" class="pt-page pt-page-1" style="width: 100%; height: 100%; -webkit-overflow-scrolling: touch; background-image: url('img/background.jpg'); background-size: 100% 100%;">
+                <!--<h1><span>A collection of</span><strong>Page</strong> Transitions</h1>-->
+                <div id="StartContent" style="text-align: center; margin-top: 200px;">
+                    <button type="button" class="casebtn" onclick="$('#StartContent').hide(); $('#MainContent').show();  $('#timeSlider').show(); startTimeline();">Case study 1 </button>
+                    <button type="button" class="casebtn">Case study 2 </button>
+                </div>
+                <div id="MainContent" style="display: none;">
+                    <div id="animationHolder" style="width: 717px; height: 489px; background-image: url('img/road.png'); margin: 0 auto; margin-top: 6px;">
+                    </div>
+                    <div style="width: 717px; margin: 0 auto; margin-top: -2px; text-align: center;">
+                        <div style="width: 142px; background-color: rgba(133, 63, 138, 0.88); padding-top: 20px;" class="roadMnu">
+                           Presentation
+                        </div>
+                        <div style="width: 140px; background-color: rgba(133, 63, 138, 0.6); padding-top: 20px;" class="roadMnu">
+                            Relevant History
+                        </div>
+                        <div style="width: 141px; background-color: rgba(133, 63, 138, 0.88); padding-top: 20px;" class="roadMnu">
+                            Examination
+                        </div>
+                        <div style="width: 142px; background-color: rgba(133, 63, 138, 0.6);" class="roadMnu">
+                            Laboratory findings
+                        </div>
+                        <div style="width: 142px; background-color: rgba(133, 63, 138, 0.88);" class="roadMnu">
+                            Patient selection for KT
+                        </div>
+                    </div>
+                    <input id="range" type="range" min="20" max="55" value="20" />
+                    <div id="ShowDiv" style="width: 100%; height: 100%; background-color: transparent; position: absolute; top: 0; display: none;">
+                        <div style="margin: 0 auto; overflow-x: hidden; overflow-y: auto; background-color: rgba(223, 223, 223, 0.86); width: 80%; margin-top: 50px; height: 400px;">
+                            <div style="text-align: right;">
+                                <span class="glyphicon glyphicon-remove" style="margin: 10px; cursor: pointer;" onclick="$('#ShowDiv').fadeOut('slow');"></span>
+                            </div>
+                            <div id="ImgCont1" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Presentation:</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>A 56 year old female is referred for evaluation of increased serum creatinine and transplantation
+                                    </li>
+                                </ul>
+
+                                <p style="color: #68126e; margin-left: 30px; margin-top: 15px; font-size: 21px;">
+                                    <strong><u>History:</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Hypertension, diagnosed 10 years ago</li>
+                                    <li>Hyperlipidemia; diagnosed 5 years ago</li>
+                                    <li>Crohn's disease, diagnosed in the 1990‘s</li>
+                                    <li>Developed recurrent stone disease in the early 2000's </li>
+                                    <li>Serum creatinine was 1.9 mg% in 1996 and 2.4 mg% in 2003</li>
+                                    <li>Acute renal failure secondary to obstructive stone disease with a serum creatinine of 12.4 mg% in 2005</li>
+                                    <li>Renal function moderately improved after obstruction correction and IgA nephropathy was diagnosed; PRA was 50%</li>
+                                    <li>Hemodialysis from 2007, complicated by several episodes of sepsis
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div id="ImgCont2" class="ImgCCC" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray" style="height: 400px; float: left; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Past history</u></strong>
+                                    </p>
+
+                                    <ul style="margin-left: 60px;">
+                                        <li>Hypertension; diagnosed 10 years ago</li>
+                                        <li>Membranoproliferative glomerulonephritis diagnosed in 2009</li>
+                                        <li>Peritoneal dialysis since 2010</li>
+                                    </ul>
+                                </div>
+                                <div id="Content2" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Relevant history</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <li>Family/ Occupational/ Social History:
+                                            <ul>
+                                                <li>Father and mother had hypertension; died age 50 and 70 years respectively</li>
+                                                <li>Never smoked or consumed alcohol</li>
+                                                <li>Retired bank employee</li>
+                                            </ul>
+                                        </li>
+                                        <li>Current Medications: 
+                                            <ul>
+                                                <li>Telmisartan 40 mg once daily</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div onclick="onclicknext(this);" id="btnnext" style="height: 400px; float: right; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+
+                            <div id="ImgCont3" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Examination</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Height: 5’ 7“ </li>
+                                    <li>Weight: 140 in kg</li>
+                                    <li>BMI: 22 </li>
+                                    <li>Waist circumference: 38"</li>
+                                    <li>Blood pressure: 135/90 mm Hg</li>
+                                    <li>Cardiac exam: normal </li>
+                                    <li>Peripheral pulses: normal</li>
+                                    <li>No organomegaly</li>
+                                    <li>Bilateral pedal edema</li>
+                                </ul>
+                            </div>
+
+                            <div id="ImgCont4" class="ImgCCC" style="display: none;">
+                                <div style="width: 50%; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Laboratory findings</u></strong>
+                                    </p>
+                                    <ul style="">
+                                        <li>HB: 8g/dL</li>
+                                        <li>Serum creatinine: 4.9 mg/dL</li>
+                                        <li>Blood Urea Nitrogen: 120 mg/dL</li>
+                                        <li>Serum pottassium: 7.6 mmom/L</li>
+                                        <li>Serum calcium: 1.6 mmol/L</li>
+                                        <li>eGFR: 10 mL/min/1.73 m2</li>
+                                        <li>Total urinary protein: 0.7 g/24 hr</li>
+                                        <li>Resting ECG: left axis deviation, otherwise normal</li>
+                                        <li>FSG: 100 mg/dL</li>
+                                        <li>PPSG: 130 mg/dL</li>
+                                            <li>HbA1C: 6.5%</li>
+                                            <li>Lipid panel
+                                                
+                                            </li>
+                                        <li>PRA: <10</li>
+                                    </ul>
+                                </div>
+
+                                <div style="width: 50%; float: left;">
+
+                                    <ul style="margin-left: 60px; margin-top: 65px;">
+                                        <li>Lipid panel
+                                        </li>
+                                        <li>
+                                           <ul>
+                                                    <li>TC: 153 mg/dL</li>
+                                                    <li>TG: 220 mg/dL</li>
+                                                    <li>HDL-C: 31 mg/dL</li>
+                                                    <li>LDL-C: 80 mg/dL </li>
+                                                </ul>
+                                        </li>
+                                        <li>PRA: <10
+                                        </li>
+                                    </ul>
+                                </div>
+                                </div>
+                            <div id="ImgCont5" class="ImgCCC" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray" style="height: 400px; float: left; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Div2" class="conClass" data-value="1" style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Kidney transplantation</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <li>Deceased donor (brain dead, 64-yr-old) KT May 2013</li>
+                                        <li>Immediate function</li>
+                                        <li>Serum Creatinine reduced and stable at 2.0 mg/dl </li>
+                                        <li>Patient discharged on day 9 after surgery</li>
+                                        <li>Basiliximab on day 0 and day 4</li>
+                                        <li>Cyclosporine trough level 100-200  ng/mL </li>
+                                        <li>Everolimus (Certican®) 0.75 mg/12 h since day 1; increased to 2 mg/12h by day 15</li>
+                                        <li>Steroids</li>
+                                    
+
+                                    </ul>
+                                </div>
+                                
+                                <div onclick="onclicknext(this);" id="btnnext" style="height: 400px; float: right; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                            <div id="ImgCont6" class="ImgCCC" style="display: none;">
+                                <input type="hidden" value="1" id="currentContent" />
+                                <div onclick="onclickprev(this);" id="btnprev" class="colorGray" style="height: 400px; float: left; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Content1" class="conClass" data-value="1" style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u></u></strong>
+                                    </p>
+                                    <p>
+                                        The recommended therapeutic range for cyclosporine when administered along with everolimus beyond 1 month of transplantation is
+
+                                    </p>
+                                    <ol type='A'style="margin-left: 60px;">
+                                        <li>100-200  ng/mL</li>
+                                        <li>75-150  ng/mL</li>
+                                        <li>50-100  ng/mL</li>
+                                        <li>25-50  ng/mL</li>
+                                    </ol>
+                                </div>
+                                 <div id="Content1" class="conClass" data-value="1" style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Recommended therapeutic ranges of cyclosporine when administered with everolimus</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                       <img src="img/CaseStudy2/Picture1.png" />
+                                    
+
+                                    </ul>
+                                </div>
+                                
+                                <div onclick="onclicknext(this);" id="btnnext" style="height: 400px; float: right; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                           
+                            <div id="ImgCont7" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Wound complications</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>2 months after the transplant the patient presented with dehiscence of the wound and clear discharge</li>
+                                    <li>Examination revealed superficial wound dehiscence</li>
+                                    <li>Mild oedema, redness and induration of incision site</li>
+                                   
+                                </ul>
+                            </div>
+                            <div id="ImgCont8" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Lab tests</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>CBC normal</li>
+                                    <li>Blood culture and wound culture did not reveal any infection</li>                                 
+                                </ul>
+                            </div>
+                            <div id="ImgCont9" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Management</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Surgical repair of the dehiscence</li>
+                                    <li>Steroids tapered and stopped after 1 week</li> 
+                                    <li>Everolimus dose reduced to 1.5 mg/12 hrs</li>
+                                    <li>Cyclosporine dose adjusted for trough level 75-150 ng/mL</li>                                
+                                </ul>
+                            </div>
+                            <div id="ImgCont10" class="ImgCCC" style="display: none;">
+                                <input type="hidden" value="1" id="Hidden1" />
+                                <div onclick="onclickprev(this);" id="Div3" class="colorGray" style="height: 400px; float: left; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Div4" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u></u></strong>
+                                        <p>Which factors could influence wound healing in general in this population</p>
+                                    </p>
+
+                                    <ol type='A' style="margin-left: 60px;">
+                                        <li>Age</li>
+                                        <li>Immunosuppressive agents including everolimus</li>
+                                        <li>Steroids</li>
+                                        <li>Possible malnutrition</li>
+                                        <li>Technical factors</li>
+                                        <li>All of the above</li>
+                                    </ol>
+                                </div>
+                                <div id="Div5" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Pathophysiology of mTORi associated delayed wound healing</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <img src="img/CaseStudy2/Picture2.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div1" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>MMF is a risk factor for wound-healing complications </u></strong>
+                                    </p>
+
+                                    <ul style="margin-left: 60px;">
+                                        <img src="img/CaseStudy2/Picture3.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div7" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>CALLISTO: similar incidence of wound-healing events with immediate vs delayed EVR</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                       <img src="img/CaseStudy2/Picture4.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div8" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>A2309: similar incidence of wound-healing events with de novo everolimus 1.5 mg and MPA</u></strong>
+                                    </p>
+
+                                    <ul style="margin-left: 60px;">
+                                       <img src="img/CaseStudy2/Picture5.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div9" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Wound events/lymphocele formation with de novo EVRu></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <img src="img/CaseStudy2/Picture6.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div10" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Safety profile of everolimus</u></strong>
+                                    </p>
+
+                                    <ul style="margin-left: 60px;">
+                                        <li>Other adverse events reported with use of everolimus include1 
+                                            <ul>
+                                                <li>Peripheral edema</li>
+                                                <li>Hyperlipidemia</li>
+                                                <li>Stomatits/mouth ulceration</li>
+                                                <li>Proteinuria</li>
+                                            </ul>
+                                        </li>
+                                        <li>Most adverse events are present for a short time after the introduction of everolimus, and are manageable2</li>
+                                    </ul>
+                                    <ol type='1'>
+                                        <li>Zortress® Prescribing Information (updated Feb 2013). Available at: http://www.pharma.us.novartis.com/products/zortress.shtml.</li>
+                                        <li>Holdaas H1, Midtvedt K, Åsberg A. A drug safety evaluation of everolimus in kidney transplantation. Expert Opin Drug Saf. 2012 Nov;11(6):1013-22.</li>
+
+                                    </ol>
+                                </div>
+                                 <div id="Div12" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>A2309: Tolerability with everolimus + low CNI was comparable to that seen with standard CNI</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <img src="img/CaseStudy2/Picture7.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div11" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Risk-benefit outcome</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <li>Strategy for best risk-benefit outcome
+                                            <ul>
+                                                <li>Everolimus adjusted to maintain a blood concentration of 3-8 ng/mL with</li>
+                                                <li>60% reduction in the usual doses of cyclosporine</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div onclick="onclicknext(this);" id="Div6" style="height: 400px; float: right; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                             <div id="ImgCont11" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Month 4 – Lab values</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Examination and lab values
+                                        <ul>
+                                            <li>Wound healed completely</li>
+                                            <li>Serum creatinine 1.6 mg/dL</li>
+                                            <li>Total cholesterol 300 mg/dL</li>
+                                            <li>LDL cholesterol 190 mg/dL</li>
+                                        </ul>
+                                    </li>                       
+                                </ul>
+                            </div>
+                            <div id="ImgCont12" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Month 4 - Management</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Everolimus dose increased to 2 mg/12 hrs</li>
+                                    <li>Cyclosporine dose adjusted for trough level 50-100 ng/mL</li>
+                                    <li>Atorvastatin 20 mg/day</li>                          
+                                </ul>
+                            </div>
+                           <div id="ImgCont13" class="ImgCCC" style="display: none;">
+                                <input type="hidden" value="1" id="Hidden2" />
+                                <div onclick="onclickprev(this);" id="Div14" class="colorGray" style="height: 400px; float: left; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Div15" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u></u></strong>
+                                    </p>
+                                    <p>What could be the cause of hyperlipedemia?</p>
+
+                                    <ul type='A'style="margin-left: 60px;">
+                                        <li>Common complication following kidney transplantation</li>
+                                        <li>Use of mTORi</li>
+                                        <li>Both</li>
+                                    </ul>
+                                </div>
+                                <div id="Div16" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Pathophysiology of mTORi associated hyperlipidemia </u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <img src="img/CaseStudy2/Picture8.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div18" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Hyperlipidemia during everolimus use</u></strong>
+                                    </p>
+
+                                    <ul style="margin-left: 60px;">
+                                       <img src="img/CaseStudy2/Picture9.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div19" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Hyperlipidemia during everolimus use</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <img src="img/CaseStudy2/Picture10.png" />
+                                    </ul>
+                                </div>
+                                <div onclick="onclicknext(this);" id="Div17" style="height: 400px; float: right; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                            <div id="ImgCont14" class="ImgCCC" style="display: none;">
+                                <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                    <strong><u>Month 6</u></strong>
+                                </p>
+                                <ul style="margin-left: 60px;">
+                                    <li>Examination and lab values
+                                        <ul>
+                                            <li>Serum creatinine 1.2 mg/dL</li>
+                                            <li>LDL cholesterol 110 mg/dL</li>
+                                        </ul>
+                                    </li>
+                                    <li>Management
+                                        <ul>
+                                            <li>Everolimus 2 mg/12 hrs</li>
+                                            <li>Cyclosporine dose adjusted for trough level 25-50 ng/mL</li>
+                                            <li>Atorvastatin 20 mg/day continued</li> 
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="Div13" class="ImgCCC" style="display: none;">
+                                <input type="hidden" value="1" id="Hidden3" />
+                                <div onclick="onclickprev(this);" id="Div20" class="colorGray" style="height: 400px; float: left; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-left"></span>
+                                </div>
+                                <div id="Div21" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Month 24</u></strong>
+                                    </p>
+
+                                    <ul type='A'style="margin-left: 60px;">
+                                        <li>Serum creatinine 1.1 mg/dL</li>
+                                        <li>LDL cholesterol 108 mg/dL</li>
+                                        <li>Everolimus 2 mg/12 hrs</li>
+                                        <li>Cyclosporine dose adjusted for trough level 25-50 ng/mL</li>
+                                        <li>Atorvastatin 20 mg/day continued
+                                            <ul>
+                                                <li>No anti HLA antibodies</li>
+                                                <li>Serum creatinine stable</li>
+                                                <li>No proteinuria</li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div id="Div22" class="conClass"  style="display: none; float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>EVR: a multifaceted drug with the potential to improve long-term outcomes</u></strong>
+                                    </p>
+                                    <ul style="margin-left: 60px;">
+                                        <img src="img/CaseStudy2/Picture11.png" />
+                                    </ul>
+                                </div>
+                                <div id="Div23" class="conClass"  style="float: left;">
+                                    <p style="color: #68126e; margin-left: 30px; font-size: 21px;">
+                                        <strong><u>Summary</u></strong>
+                                    </p>
+
+                                    <ul style="margin-left: 60px;">
+                                       <li>Administer everolimus in combination with basiliximab, reduced dose cyclosporine or tacrolimus* and corticosteroids as soon as possible after kidney transplantation </li>
+                                        <li>The initial dose of everolimus is 0.75 mg twice daily with CsA
+                                            <ul>
+                                                <li>The initial dose of cyclosporine to achieve a trough level of  100-200 ng/mL</li>
+                                                <li>The initial dose with TAC is 1.5 mg twice daily*</li>
+                                            </ul>
+                                        </li>
+                                        <li>Therapeutic monitoring of both everolimus and CsA is recommended 45 days after initiating treatment or dose change</li>
+                                        <li>Everolimus trough concentrations should be in the range of 38 ng/mL</li>
+                                        <li>Most AEs associated with everolimus can be adequately managed while on therapy and only a few cases require discontinuation of everolimus</li>
+
+                                    </ul>
+                                </div>
+                                <div onclick="onclicknext(this);" id="Div25" style="height: 400px; float: right; margin-top: -34px; width: 20px; cursor: pointer; text-align: center;">
+                                    <span style="margin-top: 200px;" class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" runat="server" visible="false" id="ActivateBtnUser" class="btn btn-primary cusBtn" style="background-color: #8dc63f; margin-top: -3px;" data-toggle="dropdown">
+
+            <span class="glyphicon glyphicon-cog"></span>
+        </button>
+    <div class="btn-group dropup" style="position: absolute; right: 0; bottom: 0;">
+        <button type="button" runat="server" visible="false" id="ActivateBtnMod" class="btn btn-primary cusBtn" style="background-color: #8dc63f; margin-top: -3px;" data-toggle="dropdown">
+
+            <span class="glyphicon glyphicon-cog"></span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="#" onclick="onClickActivateCase();">Activate Case info</a></li>
+            <li><a href="login.aspx?type=logout">Logout</a></li>
+        </ul>
+    </div>
+    <div style="display: none;">
+    </div>
+
+
+    <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="ImgContent">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-top: 0px;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Page Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered" style="margin-bottom: 0px;">
+                        <thead>
+                            <tr>
+                                <th>Page Name</th>
+                                <th style="width: 180px;">Status</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="table-responsive" style="height: 300px; overflow: auto;">
+                        <table class="table table-bordered">
+                            <tbody id="pageDatatable">
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="location.reload();" data-dismiss="modal" style="margin-top: 0px;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModalCase" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="H1">Case Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered" style="margin-bottom: 0px;">
+                        <thead>
+                            <tr>
+                                <th>Image ID</th>
+                                <th style="width: 180px;">Status</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="table-responsive" style="height: 300px; overflow: auto;">
+                        <table class="table table-bordered">
+                            <tbody id="caseSetting">
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="location.reload();" data-dismiss="modal" style="margin-top: 0px;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeSlider" style="width:717px; margin: 0 auto; display:none;">
+    	<div class="timeline-wrap">
+		<div class="timeline-event" data-value="22" data-margin="-32px">
+			<div class="timeline-title arrow_box">Jan 2013</div>
+			
+		</div>
+		<div class="timeline-event" data-value="40" data-margin="-12px">
+			<div class="timeline-title">May 2013</div>
+			
+		</div>
+		<div class="timeline-event" data-value="53" data-margin="-10px">
+			<div class="timeline-title">june 2013</div>
+			
+		</div>
+		
+	</div>
+
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+    	<script src="js/touch.timeline.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/jquery.dlmenu.js"></script>
+
+    <script src="js/pagetransitions.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            positionLogo();
+            $(".li_menu").click(function (event) {
+                if ($(this).hasClass("disabled"))
+                    return
+
+                $(".li_menu").removeClass("active");
+                $(this).addClass("active");
+            });
+            $('input[name="my-checkbox"]').bootstrapSwitch();
+        });
+
+        function onclickprev(ele) {
+            var currentContent = $(ele).parent().find("#currentContent").val();
+            var totalElements = $(ele).parent().find(".conClass");
+            if (parseInt(currentContent) > 1) {
+                if (parseInt(currentContent) == totalElements.length) {
+                    $(ele).parent().find("#btnnext").attr("class", "");
+                }
+
+                $(ele).parent().find(".conClass").hide();
+                $(ele).parent().find("#Content" + (parseInt(currentContent) - 1)).fadeIn("slow");
+                $(ele).parent().find("#currentContent").val((parseInt(currentContent) - 1));
+
+            }
+            if ((parseInt(currentContent) - 1) == 1) {
+                $(ele).parent().find("#btnprev").attr("class", "colorGray");
+            }
+
+        }
+
+
+        function onclicknext(ele) {
+            var currentContent = $(ele).parent().find("#currentContent").val();
+            var totalElements = $(ele).parent().find(".conClass");
+            if (parseInt(currentContent) < totalElements.length) {
+                $(ele).parent().find(".conClass").hide();
+                $(ele).parent().find("#Content" + (parseInt(currentContent) + 1)).fadeIn("slow");
+                $(ele).parent().find("#currentContent").val((parseInt(currentContent) + 1));
+                $(ele).parent().find("#btnprev").removeClass("colorGray");
+                if ((parseInt(currentContent) + 1) == totalElements.length) {
+                    $(ele).parent().find("#btnnext").attr("class", "colorGray");
+                }
+            }
+        }
+
+
+        function positionLogo() {
+            document.getElementById("logo").style.left = (window.innerWidth) - 239 + "px";
+        }
+        function changecontent(ele, step) {
+            var currentID = 1;
+            var nextID = 1;
+            var elements = $(ele).parent().parent().find(".content");
+            for (var i = 0; i < elements.length; i++) {
+                if ($(elements[i]).css('display') != 'none')
+                    currentID = $(elements[i]).data("value");
+            }
+
+            if (step == 'next') {
+                if (currentID < elements.length)
+                    nextID = parseInt(currentID) + 1;
+                else
+                    return;
+            }
+            else {
+                if (currentID > 1)
+                    nextID = parseInt(currentID) - 1;
+                else
+                    return;
+            }
+
+            $(ele).parent().parent().find('#content' + currentID).fadeOut("slow", function () {
+                $(ele).parent().parent().find('#content' + nextID).css('display', 'block');
+            });
+
+        }
+    </script>
+
+    <script src="js/raphael-min.js"></script>
+    <script src="js/raphael-guides.js"></script>
+    <script>
+        var img1, img2, img3, img4;
+        var imgArray = new Array();
+        var pathArray = new Array();
+        var path1, path2, path3, path4, path;
+        var line;
+        var lineArray = new Array();
+        $(function () {
+
+
+
+
+            LoadXml();
+            //img1 = p.image("img/logo.png", -10, 0, 56, 58);
+            //$(img1.node).attr("id", "img");
+            //$(img1.node).attr("class", "imgDisabled");
+            //img1.attr({ guide: path1, along: 0.2 });
+            //img1.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont1").html()); });
+
+
+            ////img1.mouseover(function (e) {
+            ////    img1.animate({ scale: 1.0 }, 1000, "ease-out");
+            ////});
+            ////img1.mouseout(function (e) {
+            ////    img1.animate({ scale: img1.lastScale }, 1000, "ease-out");
+            ////});
+
+            //img2 = p.image("img/logo.png", 0, 0, 56, 58);
+            //img2.attr({ guide: path2, along: 0.2 });
+            //img2.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont2").html()); });
+
+            //img3 = p.image("img/logo.png", 0, 0, 56, 58);
+            //img3.attr({ guide: path3, along: 0.2 });
+            //img3.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont3").html()); });
+
+            //img4 = p.image("img/logo.png", 0, 0, 56, 58);
+            //img4.attr({ guide: path4, along: 0.2 });
+            //img4.click(function () { $('#myModal').modal('show'); $('#ImgContent').html($("#ImgCont4").html()); });
+
+            //var circ1 = p.circle(0, 0, 10).attr(black);
+
+            //var circ2 = p.circle(0, 0, 10).attr(black);
+            //var circ3 = p.circle(0, 0, 10).attr(black);
+            //var circ4 = p.circle(0, 0, 10).attr(black);
+
+            //var circ2 = p.circle(0, 0, 10).attr(black);
+
+            //$(document).on("click", function () {
+            //    // animate along a path
+
+
+            //    //circ2.attr({ guide: path3, along: 1 })
+            //    //  .animate({ along: 0 }, 3000, "ease-out");
+            //});
+
+
+
+        });
+
+        window.onload = function () {
+            onLoadDisablePage();
+            document.getElementById("range").addEventListener("change", function (e) {
+                //document.querySelector(".range").textContent = e.currentTarget.value;
+
+                var time = 1000;
+                var length = (parseInt(e.currentTarget.value)) * 25;
+                //                console.log(length);
+
+                for (var i = 0; i < imgArray.length; i++) {
+                    imgArray[i].animate({ along: length }, time, "ease-out");
+
+                }
+                for (var j = 0; j < lineArray.length; j++) {
+                    lineArray[j].animate({ along: length }, time, "ease-out");
+                }
+
+                //timeline 
+                UpdateTimeLine(parseInt(e.currentTarget.value));
+            });
+        }
+
+        function SlideSlider(value) {
+            var time = 1000;
+            var length = (parseInt(value)) * 25;
+            //                console.log(length);
+
+            for (var i = 0; i < imgArray.length; i++) {
+                imgArray[i].animate({ along: length }, time, "ease-out");
+
+            }
+            for (var j = 0; j < lineArray.length; j++) {
+                lineArray[j].animate({ along: length }, time, "ease-out");
+            }
+
+            //timeline 
+            UpdateTimeLine(value);
+
+        }
+
+        function UpdateTimeLine(value) {
+            $("#timeline-event-node-1").parent().parent().find('.timeline-title').css('margin-left', '0px');
+            $("#range").val(value);
+            if (parseInt(value) > 30 && parseInt(value) < 52)
+            {
+                $("#timeline-event-node-1").parent().parent().find('.selected-event').removeClass('selected-event');
+                $("#timeline-event-node-1").addClass('selected-event');
+
+                $("#timeline-event-node-1").parent().parent().find('.arrow_box').removeClass('arrow_box');
+                $("#timeline-event-node-1").parent().find('.timeline-title').addClass('arrow_box');
+
+                $("#timeline-event-node-1").parent().find('.arrow_box').css('margin-left', '-12px');
+                $(".timeline-draggable").css("left", "348px");
+            }
+            else if (parseInt(value) <= 30)
+            {
+                $("#timeline-event-node-0").parent().parent().find('.selected-event').removeClass('selected-event');
+                $("#timeline-event-node-0").addClass('selected-event');
+
+                $("#timeline-event-node-0").parent().parent().find('.arrow_box').removeClass('arrow_box');
+                $("#timeline-event-node-0").parent().find('.timeline-title').addClass('arrow_box');
+
+                $("#timeline-event-node-0").parent().find('.arrow_box').css('margin-left', '-32px');
+                $(".timeline-draggable").css("left","0px");
+
+            }
+            else
+            {
+                $("#timeline-event-node-2").parent().parent().find('.selected-event').removeClass('selected-event');
+                $("#timeline-event-node-2").addClass('selected-event');
+
+                $("#timeline-event-node-2").parent().parent().find('.arrow_box').removeClass('arrow_box');
+                $("#timeline-event-node-2").parent().find('.timeline-title').addClass('arrow_box');
+                $("#timeline-event-node-2").parent().find('.arrow_box').css('margin-left', '10px');
+                $(".timeline-draggable").css("left", "697px");
+            }
+        }
+
+        $(".ImgCCC").swipe({
+            //Generic swipe handler for all directions
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == "left")
+                    $(event.currentTarget).find("#btnnext").click();
+                else if (direction == "right")
+                    $(event.currentTarget).find("#btnprev").click();
+
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold: 0
+        });
+
+        
+
+        $("#animationHolder").swipe({
+            //Generic swipe handler for all directions
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == "up")
+                    $("#range").val(parseInt($("#range").val()) - 5);
+                else if (direction == "down")
+                    $("#range").val(parseInt($("#range").val()) + 5);
+
+                SlideSlider($("#range").val());
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold: 0
+        });
+
+
+        function LoadXml() {
+            $.ajax({
+                type: "GET",
+                url: "data.xml",
+                dataType: "xml",
+                success: function (xml) {
+                    loadImageData(xml);
+                }
+            });
+        }
+
+        function loadImageData(xml) {
+            var holder = document.getElementById("animationHolder");
+            var p = new Raphael("animationHolder", "100%", "100%");
+
+            // give raphael guide and along custom attributes
+            p.addGuides();
+
+            var white = { stroke: "none" };
+            var black = { stroke: "none" };
+            var path;
+
+            //var path1 = p.path("M 100 100 Q 200 500 300 100").attr(white);
+
+            /*var path2 = p.path("M 300 100 \
+                           R 350 150 \
+                           400 50 \
+                           450 100 \
+                           500 40 \
+                           550 100").attr(white);*/
+            pathArray[6] = p.path("M 703 750 \
+                                   L 703 487 \
+                                   Q 480 320 448 0\
+                                   L 448 -150 \
+                           ").attr(black);
+
+            pathArray[5] = p.path("M 613 750 \
+                                   L 613 487 \
+                                   Q 450 330 414 0\
+                                   L 414 -150 \
+                           ").attr(black);
+            pathArray[4] = p.path("M 465 750 \
+                                   L 465 487 \
+                                   Q 400 330 384 0\
+                                   L 384 -150 \
+                           ").attr(black);
+
+            pathArray[3] = p.path("M 320 750\
+                                   L 320 487 \
+                                   Q 355 330 350 0\
+                                   L 350 -150 \
+                           ").attr(black);
+
+            pathArray[2] = p.path("M 160 750 \
+                                   L 160 487 \
+                                   Q 325 305 320 0\
+                                   L 320 -150\
+                           ").attr(black);
+            pathArray[1] = p.path(" M 0 750 \
+                                    L 0 487 \
+                                    Q 270 330 290 0\
+                                    L 290 -150\
+                           ").attr(white);
+            pathArray[0] = p.path("M 357 550 \
+                           L 375 -150\
+                           ").attr(black);
+
+
+
+
+            var items = $(xml).find('element');
+
+            var request = new GetImageData();
+            var result = DoService(request);
+            var html = "";
+
+
+
+
+            for (var i = 0; i < items.length; i++) {
+                var element = items[i];
+                if (element.getAttribute("type") == "image") {
+                    var Imgpath = element.getAttribute("path");
+                    var point = pathArray[Imgpath].getPointAtLength(0);
+                    //                    console.log(point.x + "," + point.y);
+                    var image = p.image(element.getAttribute("source"), 0, 0, 36, 38);
+
+                    var ImageID = element.getAttribute("id");
+                    $(image.node).attr("id", ImageID);
+                    $(image.node).attr("class", "RoadImg");
+                    for (var index = 0; index < result.length; index++) {
+                        if (result[index].ImageID == ImageID && !result[index].Status) {
+                            $(image.node).attr("class", "disabled");
+                            $(image.node).attr("href", element.getAttribute("dsource"));
+                        }
+                    }
+
+                    image.attr({ guide: pathArray[Imgpath], along: parseFloat(element.getAttribute("along")), distance: parseInt(element.getAttribute("distance")), type: "img" });
+                    $(image.node).attr("onclick", "onImageClick(this, '" + element.getAttribute("dataID") + "')");
+                    $(image.node).attr("onmousemove", "onImageOver(this," + element.getAttribute("path") + ")");
+                    $(image.node).attr("onmouseout", "onImageOut(this," + element.getAttribute("path") + ")");
+
+                    imgArray.push(image);
+                }
+                else if (element.getAttribute("type") == "line") {
+                    var Imgpath = element.getAttribute("path");
+                    var line = p.rect(element.getAttribute("x"), element.getAttribute("y"), element.getAttribute("a"), element.getAttribute("b"));
+                    line.attr({ fill: "black" });
+                    line.attr({ leftlane: pathArray[1], rightlane: pathArray[6], along: parseFloat(element.getAttribute("along")), distance: parseInt(element.getAttribute("distance")), type: "line" });
+                    lineArray.push(line);
+                }
+
+            }
+        }
+
+
+
+        function onImageOut(ele, id) {
+            if (!$(ele).is(".disabled")) {
+                var element = $(document).find(".roadMnu");
+                $(element).removeClass("gray");
+            }
+        }
+
+        function onImageOver(ele, id) {
+            if (!$(ele).is(".disabled")) {
+                var element = $(document).find(".roadMnu");
+                var pathID = parseInt(id) - 1;
+                for (j = 0; j < element.length; j++) {
+                    if (j == pathID)
+                        $(element[j]).removeClass("gray");
+                    else
+                        $(element[j]).addClass("gray");
+                }
+
+            }
+        }
+
+        function onImageClick(ele, id) {
+            if (!$(ele).is(".disabled")) {
+                $('.ImgCCC').hide();
+                $('#ShowDiv').show();
+                $('#' + id).fadeIn('show');
+            }
+        }
+
+    </script>
+</body>
+</html>
+
